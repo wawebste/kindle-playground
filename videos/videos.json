@@ -78,6 +78,30 @@
  ],
  "videos": [
   {
+   "id": "XZ8MQS-ngCw",
+   "title": "As Frequent Travelers, We Weigh in on the Airbnb Drama",
+   "published": "2026-10-28T00:33:33+00:00",
+   "channel": "UCvthuVsurPaVz2a7_4LepGg"
+  },
+  {
+   "id": "7LAsg9WsLlQ",
+   "title": "Mysterious Entrance Spotted in Antarctica - But It Quickly Vanished from the Map",
+   "published": "2026-10-28T00:33:33+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "XMDkTK_0s84",
+   "title": "Humanity Will NEVER Leave the Solar System - Scientists Found Proof",
+   "published": "2026-10-28T00:33:33+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "j1kTkyf9rKE",
+   "title": "The Weekend Bluey Book Read Aloud by Wunmi Mosaku 🍃 | Bluey Book Reads 💙 | Bluey",
+   "published": "2026-10-28T00:33:33+00:00",
+   "channel": "UCVzLLZkDuFGAE2BGdBuBNBg"
+  },
+  {
    "id": "HgJSxXzgvAs",
    "title": "The Smelliest Plant Food Ever! 🐵 Curious George 🐵 Kids Cartoon 🐵 Kids Movies",
    "published": "2026-10-27T15:00:15+00:00",
@@ -340,18 +364,6 @@
    "title": "Peppa Pig Learns about HOT vs COLD Weather! 🌦️❄️ | Sun vs Snow Adventure | Peppa Pig Official",
    "published": "2026-10-21T13:45:23+00:00",
    "channel": "UCAOtE1V7Ots4DjM8JLlrYgg"
-  },
-  {
-   "id": "WbDe_9nEOsM",
-   "title": "Magnitude 9.0 Megaquake Threatens the US West Coast",
-   "published": "2026-10-21T12:00:19+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
-   "id": "-J0Szm2Zsh4",
-   "title": "Archaeologists Found a Lost World Beneath the Oldest Sumerian City",
-   "published": "2026-10-21T00:00:16+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
    "id": "egg4oly0XzM",
@@ -714,12 +726,6 @@
    "channel": "UCvthuVsurPaVz2a7_4LepGg"
   },
   {
-   "id": "1_Fm8nB6u-A",
-   "title": "The NEW College Commuter!",
-   "published": "2026-10-18T15:45:49+00:00",
-   "channel": "UCvthuVsurPaVz2a7_4LepGg"
-  },
-  {
    "id": "LzQ8KHlEOMo",
    "title": "Cats Vs. Dominoes!",
    "published": "2026-10-18T15:45:49+00:00",
@@ -919,7 +925,7 @@
   },
   {
    "id": "zpIhFHYFeew",
-   "title": "Which Country Makes The Best Sandwich?",
+   "title": "I Ate A Sandwich From EVERY Country",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -973,13 +979,13 @@
   },
   {
    "id": "IdENz7Spr74",
-   "title": "Can I Turn MrBeast Into A Chef?",
+   "title": "I Turned MrBeast Into A Chef",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "cAgsmgXWZr4",
-   "title": "I Ranked Street Food From EVERY Country",
+   "title": "I Ate Street Food From Every Country",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1088,12 +1094,6 @@
   {
    "id": "cJpPDoTvTwo",
    "title": "BBQ Bluey Book Read Aloud by Julia Stiles | Bluey Book Reads 💙",
-   "published": "2026-10-18T15:45:49+00:00",
-   "channel": "UCVzLLZkDuFGAE2BGdBuBNBg"
-  },
-  {
-   "id": "uMzriID81qA",
-   "title": "Let's Play…Relax ☺️ 🫧 | Bluey and Bingo Playtime | Bluey",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCVzLLZkDuFGAE2BGdBuBNBg"
   },
@@ -1435,7 +1435,7 @@
   },
   {
    "id": "tP_x_ctVz3Y",
-   "title": "I Cooked YouTubers Strangest Last Meals",
+   "title": "I Cooked EVERY YouTuber’s Last Meals",
    "published": "2026-10-03T16:00:12+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1920,5 +1920,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-10-27T15:25:41Z"
+ "updated": "2026-10-28T00:36:20Z"
 }
