@@ -78,9 +78,27 @@
  ],
  "videos": [
   {
+   "id": "PkHjliuq-TM",
+   "title": "The USA's Sleeping Volcano Is Shaking — 1980 Could Repeat",
+   "published": "2026-11-02T00:51:28+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "JfRvN7i365w",
+   "title": "A Massive Alien Structure Was Found Under the Pacific Ocean",
+   "published": "2026-11-02T00:51:28+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "rmzWF52Ahoo",
+   "title": "California’s Biggest Earthquake Could Be Closer Than We Think",
+   "published": "2026-11-02T00:51:28+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
    "id": "_7DlU7EFpDY",
    "title": "2 HOURS | Bluey & Bingo's Toy Store Game with Bandit 🦄 🤔 | The Quiet Game 🤫 | Bluey",
-   "published": "2026-11-01T16:07:19+00:00",
+   "published": "2026-11-01T16:00:13+00:00",
    "channel": "UCVzLLZkDuFGAE2BGdBuBNBg"
   },
   {
@@ -334,24 +352,6 @@
    "title": "👑 King Thistle Gets a Job and Causes Chaos! 💰 | Ben & Holly | Cartoons for Kids",
    "published": "2026-10-26T10:30:33+00:00",
    "channel": "UC2UhuvjTIrR0Ck2KrkvRcuA"
-  },
-  {
-   "id": "Ai3l7K0f2KI",
-   "title": "40+ Everyday Things Have a SECRET Second Use — Even Experts Miss These!",
-   "published": "2026-10-26T01:00:30+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
-   "id": "Fia5ZKHAYDc",
-   "title": "Smart Travel Tricks That Keep You and Your Stuff Safe",
-   "published": "2026-10-26T01:00:17+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
-   "id": "O6GLOusQ1Gg",
-   "title": "Scientists Think Venus Swallowed Its Own Moon",
-   "published": "2026-10-25T23:00:05+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
    "id": "uLf2FpHGIwc",
@@ -943,13 +943,13 @@
   },
   {
    "id": "KqTAVprbJmg",
-   "title": "$1 vs $100,000 Hotel Meals",
+   "title": "$1 vs $100,000 Hotel Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "oJhdpGp2r-8",
-   "title": "I Cooked For EVERY Soccer Star",
+   "title": "I Cooked For EVERY Footballer",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -973,7 +973,7 @@
   },
   {
    "id": "IzGqMpBIs8o",
-   "title": "Who's The Best YouTuber Chef?",
+   "title": "Who's The Best YouTube Chef?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -985,7 +985,7 @@
   },
   {
    "id": "kIB-ypmiIzo",
-   "title": "I Ate Breakfast From Every Country",
+   "title": "Which Country Has The Best Breakfast?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1003,7 +1003,7 @@
   },
   {
    "id": "TBL74Wsfbig",
-   "title": "$1 vs $100,000 Plane Food",
+   "title": "I Tried $1 vs $100,000 Plane Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1015,7 +1015,7 @@
   },
   {
    "id": "yyw_GTNzXFc",
-   "title": "I Ate School Lunch From Every Country",
+   "title": "Which Country Has The Best School Lunch?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1033,13 +1033,13 @@
   },
   {
    "id": "IdENz7Spr74",
-   "title": "I Turned MrBeast Into A Chef",
+   "title": "Can I Turn MrBeast Into A Chef?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "cAgsmgXWZr4",
-   "title": "I Ate Street Food From Every Country",
+   "title": "I Ranked Street Food From EVERY Country",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1920,5 +1920,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-01T16:07:26Z"
+ "updated": "2026-11-02T00:53:26Z"
 }
