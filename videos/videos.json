@@ -78,6 +78,18 @@
  ],
  "videos": [
   {
+   "id": "YAuDait-Ark",
+   "title": "David's Room Tour 2026",
+   "published": "2026-11-04T01:28:39+00:00",
+   "channel": "UCvthuVsurPaVz2a7_4LepGg"
+  },
+  {
+   "id": "IyxtOJxSj1s",
+   "title": "Scientists Opened Egyptian Animal Mummies - What They Found Was Disturbing",
+   "published": "2026-11-04T01:28:39+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
    "id": "mrm_f6tdiYI",
    "title": "AI Just Unlocked the Only Surviving Library of Ancient Rome",
    "published": "2026-11-03T16:00:03+00:00",
@@ -100,12 +112,6 @@
    "title": "Peppa Pig Makes a GIANT Sandwich! 😮 Learning How to Pack a Lunch Box | BRAND NEW Peppa Pig Tales",
    "published": "2026-11-03T14:00:22+00:00",
    "channel": "UCAOtE1V7Ots4DjM8JLlrYgg"
-  },
-  {
-   "id": "id0pW9RfMjc",
-   "title": "SURGERY! What Happened to Kristine?",
-   "published": "2026-11-03T02:56:57+00:00",
-   "channel": "UCvthuVsurPaVz2a7_4LepGg"
   },
   {
    "id": "yovbAh72OdI",
@@ -139,7 +145,7 @@
   },
   {
    "id": "2XtkqW2IYNY",
-   "title": "Peppa Pig Visits the JUICE Factory!🧃Learning about Food Adventure | Mini sodes 51 to 70",
+   "title": "Peppa Pig Visits the JUICE Factory!🧃Learning about Food Adventure | Minisodes 51 to 70",
    "published": "2026-11-02T15:40:16+00:00",
    "channel": "UCAOtE1V7Ots4DjM8JLlrYgg"
   },
@@ -369,12 +375,6 @@
    "id": "2HQnQGAdz58",
    "title": "News About The Real-Life Kraken That Ruled The Planet Long Before Dinosaurs",
    "published": "2026-10-28T13:00:04+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
-   "id": "L0xcjd5fOB4",
-   "title": "Something HUGE Is Forming in the Pacific — And America Is in Danger!",
-   "published": "2026-10-28T12:00:22+00:00",
    "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
@@ -973,7 +973,7 @@
   },
   {
    "id": "KqTAVprbJmg",
-   "title": "$1 vs $100,000 Hotel Food",
+   "title": "$1 vs $100,000 Hotel Meals",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1003,7 +1003,7 @@
   },
   {
    "id": "IzGqMpBIs8o",
-   "title": "Who's The Best YouTube Chef?",
+   "title": "I Challenged EVERY YouTube Chef",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1033,7 +1033,7 @@
   },
   {
    "id": "TBL74Wsfbig",
-   "title": "I Tried $1 vs $100,000 Plane Food",
+   "title": "$1 vs $100,000 Plane Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1045,7 +1045,7 @@
   },
   {
    "id": "yyw_GTNzXFc",
-   "title": "Which Country Has The Best School Lunch?",
+   "title": "I Ate School Lunch From Every Country",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1920,5 +1920,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-03T17:09:05Z"
+ "updated": "2026-11-04T01:31:42Z"
 }
