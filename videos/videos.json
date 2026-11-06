@@ -78,6 +78,18 @@
  ],
  "videos": [
   {
+   "id": "8RpkBiM4DG4",
+   "title": "They Filled an Ant Colony With Cement and Uncovered an Incredible Hidden World",
+   "published": "2026-11-06T00:00:15+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "5mgO1nOZmMU",
+   "title": "Africa Is Breaking Apart, and a New Ocean Is Slowly Forming",
+   "published": "2026-11-05T23:00:25+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
    "id": "l8CiFc5Fdwc",
    "title": "James Webb Found a Giant Scary Planet In a Nearby Star System",
    "published": "2026-11-05T17:00:40+00:00",
@@ -348,12 +360,6 @@
    "channel": "UCVzLLZkDuFGAE2BGdBuBNBg"
   },
   {
-   "id": "ez5FnKbY1hk",
-   "title": "This Volcano in North America Is Filling With Magma Again",
-   "published": "2026-10-30T16:00:18+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
    "id": "yBU56fzhqV8",
    "title": "Fruit Splats And Flying Paint 🐵 Curious George 🐵 Kids Cartoon 🐵 Kids Movies",
    "published": "2026-10-30T15:00:27+00:00",
@@ -370,12 +376,6 @@
    "title": "Peppa Pig Tales 2026 🎃 Peppa’s SURPRISE Halloween Dance Party!🦇 BRAND NEW Peppa Pig Official",
    "published": "2026-10-30T10:00:45+00:00",
    "channel": "UCAOtE1V7Ots4DjM8JLlrYgg"
-  },
-  {
-   "id": "siQ7AojVrHM",
-   "title": "Saturn’s Moon Enceladus May Be Fit For Earth Life",
-   "published": "2026-10-30T00:00:09+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
    "id": "MhFLB4MsIKI",
@@ -1021,13 +1021,13 @@
   },
   {
    "id": "GPgW3MWmQwM",
-   "title": "I Ate EVERY Color Of Rare Food",
+   "title": "I Ate Rare Food In EVERY Color",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "IzGqMpBIs8o",
-   "title": "Who's The Best Chef On YouTube?",
+   "title": "I Challenged EVERY YouTube Chef",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1039,7 +1039,7 @@
   },
   {
    "id": "kIB-ypmiIzo",
-   "title": "I Ate Breakfast From Every Country",
+   "title": "I Ate Breakfast From EVERY Country",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1057,7 +1057,7 @@
   },
   {
    "id": "TBL74Wsfbig",
-   "title": "$1 vs $100,000 Plane Food",
+   "title": "I Ate $100,000 Plane Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1920,5 +1920,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-05T17:28:39Z"
+ "updated": "2026-11-06T01:39:50Z"
 }
