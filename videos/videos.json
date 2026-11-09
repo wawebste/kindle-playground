@@ -78,6 +78,30 @@
  ],
  "videos": [
   {
+   "id": "oKppHG1mbCA",
+   "title": "Alyssa's Room Tour - 2026",
+   "published": "2026-11-09T00:59:32+00:00",
+   "channel": "UCvthuVsurPaVz2a7_4LepGg"
+  },
+  {
+   "id": "HxqnfSYkt5Q",
+   "title": "Scientists Found an Ancient City Built by GIANTS — It Shouldn't Exist",
+   "published": "2026-11-09T00:59:32+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "8bC1stMaeWA",
+   "title": "69-Feet Extinct Ocean Monster Was Just Found in Canada",
+   "published": "2026-11-09T00:59:32+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "MoboVC-xKCU",
+   "title": "This Volcano Caused a Deadly Tsunami, Now It's Erupting Again",
+   "published": "2026-11-09T00:59:32+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
    "id": "4SYoxPEN4S8",
    "title": "1 HOUR! | ﻿Bluey and Bingo LOVE dancing to the Lollipop song!🍭🕺🎶 | Bluey",
    "published": "2026-11-08T16:03:42+00:00",
@@ -300,12 +324,6 @@
    "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
-   "id": "Z2xVGUJz05U",
-   "title": "America’s Worst Maritime Disaster Was Far Worse Than the Titanic",
-   "published": "2026-11-02T21:00:17+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
    "id": "YAuDait-Ark",
    "title": "David's Room Tour 2026",
    "published": "2026-11-02T19:00:24+00:00",
@@ -352,18 +370,6 @@
    "title": "🪄 Nanny Plum Loses Her Magic Licence! 🐸 | Ben & Holly | Cartoons for Kids",
    "published": "2026-11-02T11:30:18+00:00",
    "channel": "UC2UhuvjTIrR0Ck2KrkvRcuA"
-  },
-  {
-   "id": "GK9RpABe6OY",
-   "title": "There Is a Huge Crack Splitting the Swiss Alps Right Now",
-   "published": "2026-11-02T01:00:21+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
-   "id": "PkHjliuq-TM",
-   "title": "The USA's Sleeping Volcano Is Shaking — 1980 Could Repeat",
-   "published": "2026-11-02T00:00:26+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
    "id": "_7DlU7EFpDY",
@@ -894,12 +900,6 @@
    "channel": "UC2UhuvjTIrR0Ck2KrkvRcuA"
   },
   {
-   "id": "pWra3Gw_g6E",
-   "title": "We Had to HIDE in Our Hotel Room!",
-   "published": "2026-10-18T15:45:49+00:00",
-   "channel": "UCvthuVsurPaVz2a7_4LepGg"
-  },
-  {
    "id": "LzQ8KHlEOMo",
    "title": "Cats Vs. Dominoes!",
    "published": "2026-10-18T15:45:49+00:00",
@@ -1057,13 +1057,13 @@
   },
   {
    "id": "KqTAVprbJmg",
-   "title": "I Ate $100,000 Hotel Food",
+   "title": "$1 vs $100,000 Hotel Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "oJhdpGp2r-8",
-   "title": "I Cooked For EVERY Soccer Star",
+   "title": "I Cooked Soccer Stars' Favorite Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1075,7 +1075,7 @@
   },
   {
    "id": "xReCiWbe1UQ",
-   "title": "Which YouTuber Is The Best Chef?",
+   "title": "Which YouTuber Is The Best Cook?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1087,7 +1087,7 @@
   },
   {
    "id": "IzGqMpBIs8o",
-   "title": "Who's The Best Chef On YouTube?",
+   "title": "I Challenged EVERY YouTube Chef",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1105,7 +1105,7 @@
   },
   {
    "id": "jOjJY3xEI8o",
-   "title": "50 Ways To Use Chocolate!",
+   "title": "50 Ways To Use Chocolate",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1117,7 +1117,7 @@
   },
   {
    "id": "TBL74Wsfbig",
-   "title": "I Ate $100,000 Plane Food",
+   "title": "$1 vs $100,000 Plane Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1525,7 +1525,7 @@
   },
   {
    "id": "1fGScw5eX0M",
-   "title": "I Ate EVERY Level of Spicy Food",
+   "title": "10 Levels Of Spicy Food",
    "published": "2026-09-12T16:00:00+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1930,5 +1930,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-08T16:03:48Z"
+ "updated": "2026-11-09T01:02:41Z"
 }
