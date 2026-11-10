@@ -78,6 +78,18 @@
  ],
  "videos": [
   {
+   "id": "ZblV4tEfPtI",
+   "title": "This Ancient Mummy Holds a Secret No One Dares to Reveal",
+   "published": "2026-11-10T03:38:19+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "OHk-CjcSAAY",
+   "title": "Italy Is Facing a Supervolcano Disaster — Naples Is in Danger",
+   "published": "2026-11-10T03:38:19+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
    "id": "vee1E9RpIiM",
    "title": "2 HOURS of Games | Bingo Does a Handstand for Nana! 💙 🙌 👵 | Bluey",
    "published": "2026-11-09T16:00:16+00:00",
@@ -163,7 +175,7 @@
   },
   {
    "id": "9ZqdgmaO6gM",
-   "title": "$1 vs $10,000 Mystery Box Challenge",
+   "title": "$1 vs $10,000 Cooking Challenge",
    "published": "2026-11-07T17:00:35+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -298,18 +310,6 @@
    "title": "Peppa Pig Tales 🎃 Peppa Visits the SPOOKY Halloween Light Trail! 👻 LEGO DUPLO Peppa Pig Minisodes",
    "published": "2026-11-04T12:00:10+00:00",
    "channel": "UCAOtE1V7Ots4DjM8JLlrYgg"
-  },
-  {
-   "id": "IyxtOJxSj1s",
-   "title": "Scientists Opened Egyptian Animal Mummies - What They Found Was Disturbing",
-   "published": "2026-11-04T00:00:17+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
-   "id": "mrm_f6tdiYI",
-   "title": "AI Just Unlocked the Only Surviving Library of Ancient Rome",
-   "published": "2026-11-03T16:00:03+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
    "id": "nqQsUNl7_Ds",
@@ -1063,13 +1063,13 @@
   },
   {
    "id": "KqTAVprbJmg",
-   "title": "$1 vs $100,000 Hotel Food",
+   "title": "I Ate $100,000 Hotel Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "oJhdpGp2r-8",
-   "title": "I Cooked For EVERY Soccer Star",
+   "title": "I Cooked For Every Soccer Star",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1081,7 +1081,7 @@
   },
   {
    "id": "xReCiWbe1UQ",
-   "title": "Which YouTuber Is The Best Cook?",
+   "title": "Which YouTuber Is The BEST Chef?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1111,7 +1111,7 @@
   },
   {
    "id": "jOjJY3xEI8o",
-   "title": "50 Ways To Use Chocolate",
+   "title": "50 Ways To Use Chocolate!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1123,7 +1123,7 @@
   },
   {
    "id": "TBL74Wsfbig",
-   "title": "$1 vs $100,000 Plane Food",
+   "title": "I Ate $100,000 Plane Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1930,5 +1930,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-09T19:55:01Z"
+ "updated": "2026-11-10T03:40:56Z"
 }
