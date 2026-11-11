@@ -78,6 +78,18 @@
  ],
  "videos": [
   {
+   "id": "r0go3Nlgk4Q",
+   "title": "Scientists Found 31 New Terrifying Creatures in the Atlantic",
+   "published": "2026-11-11T01:17:14+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "_2cbQTmHPkI",
+   "title": "Giant Staircase Found Beneath Egypt - Where Does It Lead?",
+   "published": "2026-11-11T01:17:14+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
    "id": "MLHCcMa5a4Q",
    "title": "The Decider Bluey Book Read Aloud by Ash Barty 🏉 🌟 | Bluey Book Reads 💙 | Bluey",
    "published": "2026-11-10T16:00:11+00:00",
@@ -304,18 +316,6 @@
    "title": "1 HOUR! | ﻿Bluey and Bandit Make a Duck Cake 🐤 🍰 | Bluey",
    "published": "2026-11-04T16:00:24+00:00",
    "channel": "UCVzLLZkDuFGAE2BGdBuBNBg"
-  },
-  {
-   "id": "3-C5pp9JEDo",
-   "title": "Mysterious City Spotted Beneath the Bermuda Triangle",
-   "published": "2026-11-04T13:00:09+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
-   "id": "DYv5aJc-jRU",
-   "title": "Something HUGE Is Building Beneath Yellowstone — A Supervolcano Nightmare Begins?!",
-   "published": "2026-11-04T12:00:10+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
    "id": "Kfe9G-GK2bc",
@@ -1081,25 +1081,25 @@
   },
   {
    "id": "oJhdpGp2r-8",
-   "title": "I Cooked For EVERY Soccer Star!",
+   "title": "I Cooked For Every Soccer Star",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "4mGVkTCx2ls",
-   "title": "$1 vs $100,000 Exotic Food",
+   "title": "$1 vs $100,000 Rare Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "xReCiWbe1UQ",
-   "title": "Which YouTuber Is The Best Chef?",
+   "title": "Which YouTuber Is The BEST Chef?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "GPgW3MWmQwM",
-   "title": "I Ate EVERY Color Of Rare Food",
+   "title": "I Ate Rare Food In EVERY Color",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1123,7 +1123,7 @@
   },
   {
    "id": "jOjJY3xEI8o",
-   "title": "50 Ways To Use Chocolate",
+   "title": "50 Ways To Use Chocolate!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1135,7 +1135,7 @@
   },
   {
    "id": "TBL74Wsfbig",
-   "title": "$1 vs $100,000 Plane Food",
+   "title": "I Ate $100,000 Plane Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1147,7 +1147,7 @@
   },
   {
    "id": "yyw_GTNzXFc",
-   "title": "I Ate School Lunch From Every Country!",
+   "title": "I Ate School Lunch From Every Country",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1930,5 +1930,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-10T17:08:14Z"
+ "updated": "2026-11-11T01:20:02Z"
 }
