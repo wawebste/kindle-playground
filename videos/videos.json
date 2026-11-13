@@ -78,6 +78,24 @@
  ],
  "videos": [
   {
+   "id": "Tjph07EfHns",
+   "title": "Drivers License FAIL or PASS? Zac's Driving TEST at the DMV",
+   "published": "2026-11-13T01:55:44+00:00",
+   "channel": "UCvthuVsurPaVz2a7_4LepGg"
+  },
+  {
+   "id": "WtEZiqy0MA0",
+   "title": "The Ocean’s Scariest Predator Has a Strange Rule About Humans",
+   "published": "2026-11-13T01:55:44+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "8lZ1TelShV8",
+   "title": "The U.S. Just Found Its Next Gold Mine",
+   "published": "2026-11-13T01:55:44+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
    "id": "SmKMIZKhtvA",
    "title": "OOPS! George The Rainbow Monkey?? 🐵 Curious George 🐵 Kids Cartoon 🐵 Kids Movies",
    "published": "2026-11-12T15:00:18+00:00",
@@ -282,12 +300,6 @@
    "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
-   "id": "nW2715TihUo",
-   "title": "Something Massive Is Tearing Iceland Apart Right Now",
-   "published": "2026-11-06T23:00:29+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
    "id": "VKyFclZ0SBM",
    "title": "Mystery Kitten Sleeping In My Bed! | Topsy & Tim - WildBrain | Kid Movies",
    "published": "2026-11-06T23:00:06+00:00",
@@ -298,12 +310,6 @@
    "title": "Michael's Room Tour",
    "published": "2026-11-06T19:00:29+00:00",
    "channel": "UCvthuVsurPaVz2a7_4LepGg"
-  },
-  {
-   "id": "_Xr5ykunl3o",
-   "title": "A Black Hole Is Building a Particle Accelerator in Our Galaxy",
-   "published": "2026-11-06T17:00:10+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
    "id": "ZK8gOk88BvA",
@@ -1099,7 +1105,7 @@
   },
   {
    "id": "KqTAVprbJmg",
-   "title": "I Ate $100,000 Hotel Food",
+   "title": "$1 vs $100,000 Hotel Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1111,13 +1117,13 @@
   },
   {
    "id": "4mGVkTCx2ls",
-   "title": "$1 vs $100,000 Exotic Food",
+   "title": "$1 vs $100,000 Rare Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "xReCiWbe1UQ",
-   "title": "Which YouTuber Is The BEST Chef?",
+   "title": "Which YouTuber Is The Best Chef?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1141,13 +1147,13 @@
   },
   {
    "id": "kIB-ypmiIzo",
-   "title": "I Ate Breakfast From EVERY Country",
+   "title": "I Ate Breakfast From Every Country",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "jOjJY3xEI8o",
-   "title": "50 Ways To Use Chocolate",
+   "title": "50 Ways To Use Chocolate!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1344,12 +1350,6 @@
    "channel": "UCUHwBudrD5mZ8dgRnf0Jt8A"
   },
   {
-   "id": "jH2jUZcCgeY",
-   "title": "Should Boys Have Long Hair?",
-   "published": "2026-10-10T19:00:32+00:00",
-   "channel": "UCvthuVsurPaVz2a7_4LepGg"
-  },
-  {
    "id": "G32Wf1zNutM",
    "title": "Barbie Doll Family Toddler Runs Away Story",
    "published": "2026-10-10T13:00:13+00:00",
@@ -1441,7 +1441,7 @@
   },
   {
    "id": "tP_x_ctVz3Y",
-   "title": "I Cooked EVERY YouTuber’s Last Meals",
+   "title": "I Ranked EVERY YouTubers Last Meals",
    "published": "2026-10-03T16:00:12+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1930,5 +1930,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-12T17:39:09Z"
+ "updated": "2026-11-13T01:58:50Z"
 }
