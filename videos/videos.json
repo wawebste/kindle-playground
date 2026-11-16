@@ -78,9 +78,27 @@
  ],
  "videos": [
   {
+   "id": "SkHqRbQmAZQ",
+   "title": "Chris Takes His Drivers License Test!!",
+   "published": "2026-11-16T19:00:05+00:00",
+   "channel": "UCvthuVsurPaVz2a7_4LepGg"
+  },
+  {
+   "id": "gfqpGCWXtNE",
+   "title": "Cat vs. WORLD'S BIGGEST LEGO Set",
+   "published": "2026-11-16T17:00:05+00:00",
+   "channel": "UCq4qiifOaFGW3a2oljSfxUg"
+  },
+  {
+   "id": "-yTVRvNMaPQ",
+   "title": "2 HOURS of Playtime | Bluey, Bingo and Judo play in the DIRT! 🛝🌳 | ﻿Bluey",
+   "published": "2026-11-16T16:00:33+00:00",
+   "channel": "UCVzLLZkDuFGAE2BGdBuBNBg"
+  },
+  {
    "id": "wjZ10OVHXZk",
    "title": "Lake Michigan Is Hiding Something Scientists Can't Explain",
-   "published": "2026-11-16T01:07:02+00:00",
+   "published": "2026-11-16T01:00:33+00:00",
    "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
@@ -349,7 +367,7 @@
   },
   {
    "id": "9ZqdgmaO6gM",
-   "title": "$1 vs $10,000 Cooking Challenge",
+   "title": "$1 vs $10,000 Food Mystery Box",
    "published": "2026-11-07T17:00:35+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -762,12 +780,6 @@
    "channel": "UC2UhuvjTIrR0Ck2KrkvRcuA"
   },
   {
-   "id": "gW4_9tVFf5Q",
-   "title": "Muffin Comes for a Sleepover! 🩶💤 | 40 MINUTES of FULL EPISODES 💙 | Bluey",
-   "published": "2026-10-21T15:00:10+00:00",
-   "channel": "UCVzLLZkDuFGAE2BGdBuBNBg"
-  },
-  {
    "id": "egg4oly0XzM",
    "title": "Food For The Plants🪴 🐵 Curious George 🐵 Kids Cartoon 🐵 Kids Movies",
    "published": "2026-10-20T15:00:25+00:00",
@@ -778,12 +790,6 @@
    "title": "🏴‍☠️ Redbeard’s Pirate Adventure to the Lost City! 🌴 | Ben & Holly | Cartoons for Kids",
    "published": "2026-10-20T13:42:22+00:00",
    "channel": "UC2UhuvjTIrR0Ck2KrkvRcuA"
-  },
-  {
-   "id": "9pEALTCl9Yg",
-   "title": "I can't believe CHLOE Did This!",
-   "published": "2026-10-18T19:00:39+00:00",
-   "channel": "UCvthuVsurPaVz2a7_4LepGg"
   },
   {
    "id": "vUBKrSwCprY",
@@ -1038,12 +1044,6 @@
    "channel": "UCq4qiifOaFGW3a2oljSfxUg"
   },
   {
-   "id": "oE7t8MYRgbI",
-   "title": "I Built LEGO Concorde ON Concorde!",
-   "published": "2026-10-18T15:45:49+00:00",
-   "channel": "UCq4qiifOaFGW3a2oljSfxUg"
-  },
-  {
    "id": "S7UM5lSgAg8",
    "title": "I Engineered The Perfect First Date",
    "published": "2026-10-18T15:45:49+00:00",
@@ -1147,25 +1147,25 @@
   },
   {
    "id": "KqTAVprbJmg",
-   "title": "$1 vs $100,000 Hotel Food",
+   "title": "I Ate 7 Levels Of Hotel Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "oJhdpGp2r-8",
-   "title": "I Cooked For EVERY Soccer Star!",
+   "title": "I Cooked For EVERY Football Player",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "4mGVkTCx2ls",
-   "title": "$1 vs $100,000 Exotic Food",
+   "title": "I Ate The World's Most Exotic Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "xReCiWbe1UQ",
-   "title": "Which YouTuber Is The Best Cook?",
+   "title": "Which YouTuber Is The Best Chef?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1177,13 +1177,13 @@
   },
   {
    "id": "IzGqMpBIs8o",
-   "title": "Who's The Best Chef On YouTube?",
+   "title": "I Challenged EVERY YouTube Chef",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "zpIhFHYFeew",
-   "title": "I Ate The World's Best Sandwich",
+   "title": "Which Country Makes The Best Sandwich?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1207,7 +1207,7 @@
   },
   {
    "id": "TBL74Wsfbig",
-   "title": "I Ate $100,000 Plane Food",
+   "title": "$1 vs $100,000 Plane Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1219,7 +1219,7 @@
   },
   {
    "id": "yyw_GTNzXFc",
-   "title": "I Ate School Lunch From Every Country",
+   "title": "I Ate School Lunch From Every Country!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1453,7 +1453,7 @@
   },
   {
    "id": "tP_x_ctVz3Y",
-   "title": "I Cooked EVERY YouTuber’s Last Meals",
+   "title": "I Cooked EVERY YouTuber’s Last Meals!",
    "published": "2026-10-03T16:00:12+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1537,7 +1537,7 @@
   },
   {
    "id": "1fGScw5eX0M",
-   "title": "10 Levels Of Spicy Food",
+   "title": "I Ate The World’s Spiciest Meal",
    "published": "2026-09-12T16:00:00+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1930,5 +1930,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-16T01:07:12Z"
+ "updated": "2026-11-16T19:41:39Z"
 }
