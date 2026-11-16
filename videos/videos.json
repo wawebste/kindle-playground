@@ -78,6 +78,30 @@
  ],
  "videos": [
   {
+   "id": "wjZ10OVHXZk",
+   "title": "Lake Michigan Is Hiding Something Scientists Can't Explain",
+   "published": "2026-11-16T01:07:02+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "GfhMejCvqzo",
+   "title": "NO WARNING! A Dormant Volcano Suddenly ROARS TO LIFE — A Terrifying Eruption!",
+   "published": "2026-11-16T00:00:36+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "Mz2xcgPB7Mg",
+   "title": "America's Most Dangerous Volcano Could Wake Up Again",
+   "published": "2026-11-15T23:00:20+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "0JULaAQPzxI",
+   "title": "Why Isn't Dubai's Palm Jumeirah Sinking?",
+   "published": "2026-11-15T17:00:39+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
    "id": "JdRwwwum8VQ",
    "title": "1 HOUR 💙 | Bluey Makes Mum LAUGH! 🤭 | Bluey",
    "published": "2026-11-15T16:00:36+00:00",
@@ -288,34 +312,10 @@
    "channel": "UCu7IDy0y-ZA0qaG51wrQY6w"
   },
   {
-   "id": "ZblV4tEfPtI",
-   "title": "This Ancient Mummy Holds a Secret No One Dares to Reveal",
-   "published": "2026-11-09T23:00:39+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
-   "id": "OHk-CjcSAAY",
-   "title": "Italy Is Facing a Supervolcano Disaster — Naples Is in Danger",
-   "published": "2026-11-09T21:00:35+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
    "id": "vee1E9RpIiM",
    "title": "2 HOURS of Games | Bingo Does a Handstand for Nana! 💙 🙌 👵 | Bluey",
    "published": "2026-11-09T16:00:16+00:00",
    "channel": "UCVzLLZkDuFGAE2BGdBuBNBg"
-  },
-  {
-   "id": "JMXpsIs5CUg",
-   "title": "Stonehenge Was a Small Part of Something Much Bigger!",
-   "published": "2026-11-09T01:00:33+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
-   "id": "HxqnfSYkt5Q",
-   "title": "Scientists Found an Ancient City Built by GIANTS — It Shouldn't Exist",
-   "published": "2026-11-09T00:00:12+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
    "id": "oKppHG1mbCA",
@@ -349,7 +349,7 @@
   },
   {
    "id": "9ZqdgmaO6gM",
-   "title": "$1 vs $10,000 Mystery Box Challenge",
+   "title": "$1 vs $10,000 Cooking Challenge",
    "published": "2026-11-07T17:00:35+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1159,19 +1159,19 @@
   },
   {
    "id": "4mGVkTCx2ls",
-   "title": "$1 vs $100,000 Rare Food",
+   "title": "$1 vs $100,000 Exotic Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "xReCiWbe1UQ",
-   "title": "Which YouTuber Is The Best Chef?",
+   "title": "Which YouTuber Is The Best Cook?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "GPgW3MWmQwM",
-   "title": "I Ate EVERY Color Of Rare Food",
+   "title": "I Ate Rare Food In EVERY Color",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1195,7 +1195,7 @@
   },
   {
    "id": "jOjJY3xEI8o",
-   "title": "50 Ways To Use Chocolate",
+   "title": "50 Ways To Use Chocolate!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1219,7 +1219,7 @@
   },
   {
    "id": "yyw_GTNzXFc",
-   "title": "I Ate School Lunch From EVERY Country!",
+   "title": "I Ate School Lunch From Every Country",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1453,7 +1453,7 @@
   },
   {
    "id": "tP_x_ctVz3Y",
-   "title": "I Cooked EVERY YouTuber’s Last Meals!",
+   "title": "I Cooked EVERY YouTuber’s Last Meals",
    "published": "2026-10-03T16:00:12+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1930,5 +1930,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-15T16:26:21Z"
+ "updated": "2026-11-16T01:07:12Z"
 }
