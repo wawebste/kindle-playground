@@ -78,6 +78,30 @@
  ],
  "videos": [
   {
+   "id": "ooRPPU0gesw",
+   "title": "California's Next Catastrophe Will Come from the Sky",
+   "published": "2026-11-17T18:00:39+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "bs312D1_Avc",
+   "title": "Alyssa Arrives at College! ￼",
+   "published": "2026-11-17T17:00:27+00:00",
+   "channel": "UCvthuVsurPaVz2a7_4LepGg"
+  },
+  {
+   "id": "5JQm7qbzA0M",
+   "title": "George Lends A Helping Hand 🐵 Curious George 🐵 Kids Cartoon 🐵 Kids Movies",
+   "published": "2026-11-17T15:00:03+00:00",
+   "channel": "UCu7IDy0y-ZA0qaG51wrQY6w"
+  },
+  {
+   "id": "e96Y5q_V1CQ",
+   "title": "Peppa Pig Plays SNEAKY Hide and Seek! 🫣 BRAND NEW Peppa Pig Tales | 20 Minutes",
+   "published": "2026-11-17T14:00:14+00:00",
+   "channel": "UCAOtE1V7Ots4DjM8JLlrYgg"
+  },
+  {
    "id": "g5KFeoq13zo",
    "title": "Scientists Were Not Ready for What's at the Moon's Hidden South Pole",
    "published": "2026-11-17T00:00:22+00:00",
@@ -306,12 +330,6 @@
    "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
-   "id": "x6bH1BtQw1E",
-   "title": "NASA Discovered 7 New Worlds… Could Humans Live There?",
-   "published": "2026-11-11T12:00:31+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
    "id": "n-8WX8e11KQ",
    "title": "MESSY House Tour 😱",
    "published": "2026-11-11T02:45:24+00:00",
@@ -367,7 +385,7 @@
   },
   {
    "id": "9ZqdgmaO6gM",
-   "title": "$1 vs $10,000 Food Mystery Box",
+   "title": "$1 vs $10,000 Mystery Box Challenge",
    "published": "2026-11-07T17:00:35+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -732,12 +750,6 @@
    "channel": "UCUHwBudrD5mZ8dgRnf0Jt8A"
   },
   {
-   "id": "QHLaqBDDQYU",
-   "title": "Family Fun Pack POOL PARTY!! 🎉 ",
-   "published": "2026-10-23T19:00:24+00:00",
-   "channel": "UCvthuVsurPaVz2a7_4LepGg"
-  },
-  {
    "id": "7O9Z7QuSKXc",
    "title": "Let's Play…Granny Mobile 👵 | Bluey and Bingo Playtime | Bluey",
    "published": "2026-10-23T15:00:26+00:00",
@@ -766,12 +778,6 @@
    "title": "MINISODES + ﻿FULL EPS | Bandit is VERY HUNGRY!💙🍔🤤 | Bluey",
    "published": "2026-10-22T15:00:04+00:00",
    "channel": "UCVzLLZkDuFGAE2BGdBuBNBg"
-  },
-  {
-   "id": "Lo4jyRRw8tw",
-   "title": "Peppa Pig Visits SPOOKY Haunted House! 👻 | Rollercoaster Train Adventure | 2 Hours Kids Cartoons",
-   "published": "2026-10-22T13:15:01+00:00",
-   "channel": "UCAOtE1V7Ots4DjM8JLlrYgg"
   },
   {
    "id": "vqOUI-PUY7s",
@@ -1153,7 +1159,7 @@
   },
   {
    "id": "oJhdpGp2r-8",
-   "title": "I Cooked Football Players Their Favorite Foods",
+   "title": "I Cooked For EVERY Soccer Star",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1177,13 +1183,13 @@
   },
   {
    "id": "IzGqMpBIs8o",
-   "title": "I Challenged EVERY YouTube Chef!",
+   "title": "I Challenged EVERY YouTube Chef",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "zpIhFHYFeew",
-   "title": "I Ate The World's Best Sandwich",
+   "title": "I Ate A Sandwich From EVERY Country",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1306,12 +1312,6 @@
    "title": "Barbie Doll Toddler Summer Camp Zipline Story",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCubmcUb9xSSJB_U8Wz4rQ-Q"
-  },
-  {
-   "id": "FlVMGwOgNQk",
-   "title": "Can Curious George Help Hundley Escape? 🐵 Curious George",
-   "published": "2026-10-18T15:00:07+00:00",
-   "channel": "UCu7IDy0y-ZA0qaG51wrQY6w"
   },
   {
    "id": "0y7W5YeMm2o",
@@ -1930,5 +1930,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-17T03:58:38Z"
+ "updated": "2026-11-17T18:38:56Z"
 }
