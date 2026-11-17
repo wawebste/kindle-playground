@@ -78,6 +78,18 @@
  ],
  "videos": [
   {
+   "id": "g5KFeoq13zo",
+   "title": "Scientists Were Not Ready for What's at the Moon's Hidden South Pole",
+   "published": "2026-11-17T00:00:22+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "4b2ztrq6pg8",
+   "title": "When Oil Is Pumped Out, What Takes Its Place?",
+   "published": "2026-11-16T23:00:22+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
    "id": "SkHqRbQmAZQ",
    "title": "Chris Takes His Drivers License Test!!",
    "published": "2026-11-16T19:00:05+00:00",
@@ -304,18 +316,6 @@
    "title": "MESSY House Tour 😱",
    "published": "2026-11-11T02:45:24+00:00",
    "channel": "UCvthuVsurPaVz2a7_4LepGg"
-  },
-  {
-   "id": "r0go3Nlgk4Q",
-   "title": "Scientists Found 31 New Terrifying Creatures in the Atlantic",
-   "published": "2026-11-11T00:00:27+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
-   "id": "_2cbQTmHPkI",
-   "title": "Giant Staircase Found Beneath Egypt - Where Does It Lead?",
-   "published": "2026-11-10T19:05:21+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
    "id": "MLHCcMa5a4Q",
@@ -1147,19 +1147,19 @@
   },
   {
    "id": "KqTAVprbJmg",
-   "title": "I Ate 7 Levels Of Hotel Food",
+   "title": "I Ate At Every Luxury Hotel",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "oJhdpGp2r-8",
-   "title": "I Cooked For EVERY Football Player",
+   "title": "I Cooked Football Players Their Favorite Foods",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "4mGVkTCx2ls",
-   "title": "I Ate The World's Most Exotic Food",
+   "title": "$1 vs $100,000 Rare Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1177,13 +1177,13 @@
   },
   {
    "id": "IzGqMpBIs8o",
-   "title": "I Challenged EVERY YouTube Chef",
+   "title": "I Challenged EVERY YouTube Chef!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "zpIhFHYFeew",
-   "title": "Which Country Makes The Best Sandwich?",
+   "title": "I Ate The World's Best Sandwich",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1195,7 +1195,7 @@
   },
   {
    "id": "jOjJY3xEI8o",
-   "title": "50 Ways To Use Chocolate!",
+   "title": "50 Ways To Use Chocolate",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1453,7 +1453,7 @@
   },
   {
    "id": "tP_x_ctVz3Y",
-   "title": "I Cooked EVERY YouTuber’s Last Meals!",
+   "title": "I Cooked EVERY YouTuber’s Last Meals",
    "published": "2026-10-03T16:00:12+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1930,5 +1930,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-16T19:41:39Z"
+ "updated": "2026-11-17T03:58:38Z"
 }
