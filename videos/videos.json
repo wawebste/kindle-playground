@@ -78,6 +78,30 @@
  ],
  "videos": [
   {
+   "id": "Dffd5pxKRh8",
+   "title": "2 HOURS 🐉 ✍️ | Bluey, Bingo, Bandit, and Chilli Draw Their Own Adventure! 🔥 ✨ | Bluey",
+   "published": "2026-11-18T16:00:34+00:00",
+   "channel": "UCVzLLZkDuFGAE2BGdBuBNBg"
+  },
+  {
+   "id": "wEx-GkWWRCA",
+   "title": "Peppa’s FIRST HOLIDAY with Suzy Sheep! 🌲 BRAND NEW Peppa Pig Stories | 4 Hours of Kids Cartoons",
+   "published": "2026-11-18T14:15:30+00:00",
+   "channel": "UCAOtE1V7Ots4DjM8JLlrYgg"
+  },
+  {
+   "id": "AqkiYmZ7opo",
+   "title": "Why Nobody Talks About Earth’s Largest Predator",
+   "published": "2026-11-18T13:00:09+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "2okjhI2x-L0",
+   "title": "James Webb Found Another Planet Beyond the Edge of Our Solar System?!",
+   "published": "2026-11-18T12:00:38+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
    "id": "DSzyWlHb54A",
    "title": "Why Getting Back from Mars Will Be Impossible",
    "published": "2026-11-18T00:00:02+00:00",
@@ -303,18 +327,6 @@
    "id": "wzqN-fIF4UI",
    "title": "Scientists Got Easter Island Wrong, New Research Shows",
    "published": "2026-11-12T14:00:29+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
-   "id": "-NEKAWA4Xck",
-   "title": "Two Megaquakes Could Hit America's West Coast Back-to-Back",
-   "published": "2026-11-12T00:00:28+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
-   "id": "8m83aJ1wgBI",
-   "title": "This Country Will Survive When Civilization Collapses",
-   "published": "2026-11-11T23:00:20+00:00",
    "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
@@ -762,22 +774,10 @@
    "channel": "UCu7IDy0y-ZA0qaG51wrQY6w"
   },
   {
-   "id": "TTx0EHaSMgc",
-   "title": "Peppa Pig Tales 2026 🎃 MYSTERY Monster Elevator! 👻 Halloween Special | BRAND NEW Peppa Pig Official",
-   "published": "2026-10-23T10:00:35+00:00",
-   "channel": "UCAOtE1V7Ots4DjM8JLlrYgg"
-  },
-  {
    "id": "TA-jtMp93-Q",
    "title": "That's a HUGE Pumpkin!🎃😮 🐵 Curious George 🐵 Kids Cartoon 🐵 Kids Movies",
    "published": "2026-10-22T15:00:28+00:00",
    "channel": "UCu7IDy0y-ZA0qaG51wrQY6w"
-  },
-  {
-   "id": "tK4mraoWQgE",
-   "title": "MINISODES + ﻿FULL EPS | Bandit is VERY HUNGRY!💙🍔🤤 | Bluey",
-   "published": "2026-10-22T15:00:04+00:00",
-   "channel": "UCVzLLZkDuFGAE2BGdBuBNBg"
   },
   {
    "id": "vqOUI-PUY7s",
@@ -1153,19 +1153,19 @@
   },
   {
    "id": "KqTAVprbJmg",
-   "title": "I Ate At Every Luxury Hotel",
+   "title": "I Ate 7 Levels Of Hotel Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "oJhdpGp2r-8",
-   "title": "I Cooked Football Players Their Favorite Foods",
+   "title": "I Cooked For EVERY Football Player",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "4mGVkTCx2ls",
-   "title": "I Ate The World's Most Exotic Food",
+   "title": "$1 vs $100,000 Exotic Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1177,7 +1177,7 @@
   },
   {
    "id": "GPgW3MWmQwM",
-   "title": "I Ate Rare Food In EVERY Color",
+   "title": "I Ate Rare Food In EVERY Color!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1189,13 +1189,13 @@
   },
   {
    "id": "zpIhFHYFeew",
-   "title": "I Ate The World's Best Sandwich",
+   "title": "Which Country Makes The Best Sandwich?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "kIB-ypmiIzo",
-   "title": "I Ate Breakfast From EVERY Country!",
+   "title": "I Ate Breakfast From EVERY Country",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1219,7 +1219,7 @@
   },
   {
    "id": "8WLvEdJODP8",
-   "title": "I Turned A Robot Into A Cook",
+   "title": "I Turned A Robot Into A Chef",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1453,7 +1453,7 @@
   },
   {
    "id": "tP_x_ctVz3Y",
-   "title": "I Cooked EVERY YouTuber’s Last Meals",
+   "title": "I Cooked YouTubers Their Last Meals",
    "published": "2026-10-03T16:00:12+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1930,5 +1930,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-18T02:57:06Z"
+ "updated": "2026-11-18T18:10:41Z"
 }
