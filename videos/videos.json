@@ -78,6 +78,12 @@
  ],
  "videos": [
   {
+   "id": "DSzyWlHb54A",
+   "title": "Why Getting Back from Mars Will Be Impossible",
+   "published": "2026-11-18T00:00:02+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
    "id": "ooRPPU0gesw",
    "title": "California's Next Catastrophe Will Come from the Sky",
    "published": "2026-11-17T18:00:39+00:00",
@@ -322,12 +328,6 @@
    "title": "2 HOURS of Silly Moments | Bingo acts SILLY in her onesie😱🐆! | Bluey",
    "published": "2026-11-11T16:00:34+00:00",
    "channel": "UCVzLLZkDuFGAE2BGdBuBNBg"
-  },
-  {
-   "id": "R8safjmL0xo",
-   "title": "The Atlantic Current Could Put America's Biggest Cities Underwater",
-   "published": "2026-11-11T13:00:10+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
    "id": "n-8WX8e11KQ",
@@ -1159,19 +1159,19 @@
   },
   {
    "id": "oJhdpGp2r-8",
-   "title": "I Cooked For EVERY Soccer Star",
+   "title": "I Cooked Football Players Their Favorite Foods",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "4mGVkTCx2ls",
-   "title": "$1 vs $100,000 Rare Food",
+   "title": "I Ate The World's Most Exotic Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "xReCiWbe1UQ",
-   "title": "Which YouTuber Is The Best Chef?",
+   "title": "Which YouTuber Is The Best Cook?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1189,13 +1189,13 @@
   },
   {
    "id": "zpIhFHYFeew",
-   "title": "I Ate A Sandwich From EVERY Country",
+   "title": "I Ate The World's Best Sandwich",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "kIB-ypmiIzo",
-   "title": "I Ate Breakfast From Every Country",
+   "title": "I Ate Breakfast From EVERY Country!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1219,13 +1219,13 @@
   },
   {
    "id": "8WLvEdJODP8",
-   "title": "I Turned A Robot Into A Chef",
+   "title": "I Turned A Robot Into A Cook",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "yyw_GTNzXFc",
-   "title": "I Ate School Lunch From Every Country!",
+   "title": "I Ate School Lunch From Every Country",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1930,5 +1930,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-17T18:38:56Z"
+ "updated": "2026-11-18T02:57:06Z"
 }
