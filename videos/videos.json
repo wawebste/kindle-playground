@@ -78,6 +78,24 @@
  ],
  "videos": [
   {
+   "id": "IUs1epYptIo",
+   "title": "A New Ocean Is Dividing Africa in Two",
+   "published": "2026-11-19T00:00:33+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "eTQClPlMGTk",
+   "title": "Scientists Found the Mummy of a Pharaoh Who Looked Like an Alien",
+   "published": "2026-11-18T23:00:07+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "ONsACzNu9gY",
+   "title": "Night Pool Tour - Family Fun Pack",
+   "published": "2026-11-18T19:00:34+00:00",
+   "channel": "UCvthuVsurPaVz2a7_4LepGg"
+  },
+  {
    "id": "Dffd5pxKRh8",
    "title": "2 HOURS 🐉 ✍️ | Bluey, Bingo, Bandit, and Chilli Draw Their Own Adventure! 🔥 ✨ | Bluey",
    "published": "2026-11-18T16:00:34+00:00",
@@ -306,12 +324,6 @@
    "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
-   "id": "8lZ1TelShV8",
-   "title": "The U.S. Just Found Its Next Gold Mine",
-   "published": "2026-11-12T23:00:34+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
    "id": "Tjph07EfHns",
    "title": "Drivers License FAIL or PASS? Zac's Driving TEST at the DMV",
    "published": "2026-11-12T19:00:11+00:00",
@@ -322,12 +334,6 @@
    "title": "OOPS! George The Rainbow Monkey?? 🐵 Curious George 🐵 Kids Cartoon 🐵 Kids Movies",
    "published": "2026-11-12T15:00:18+00:00",
    "channel": "UCu7IDy0y-ZA0qaG51wrQY6w"
-  },
-  {
-   "id": "wzqN-fIF4UI",
-   "title": "Scientists Got Easter Island Wrong, New Research Shows",
-   "published": "2026-11-12T14:00:29+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
    "id": "pRi9IsCpvIw",
@@ -397,7 +403,7 @@
   },
   {
    "id": "9ZqdgmaO6gM",
-   "title": "$1 vs $10,000 Mystery Box Challenge",
+   "title": "$1 vs $10,000 Cooking Challenge",
    "published": "2026-11-07T17:00:35+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -724,12 +730,6 @@
    "title": "Oops! The Secret Fix-It Mission! | Topsy & Tim - WildBrain | Kid Movies",
    "published": "2026-10-24T23:00:04+00:00",
    "channel": "UCUHwBudrD5mZ8dgRnf0Jt8A"
-  },
-  {
-   "id": "JKptK0SbOPw",
-   "title": "Chris & the BROOM LIGHT SABER",
-   "published": "2026-10-24T19:00:09+00:00",
-   "channel": "UCvthuVsurPaVz2a7_4LepGg"
   },
   {
    "id": "IRDFYqmpJkM",
@@ -1153,31 +1153,31 @@
   },
   {
    "id": "KqTAVprbJmg",
-   "title": "I Ate 7 Levels Of Hotel Food",
+   "title": "I Ate At Every Luxury Hotel",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "oJhdpGp2r-8",
-   "title": "I Cooked For EVERY Football Player",
+   "title": "I Cooked Football Players Their Favorite Foods",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "4mGVkTCx2ls",
-   "title": "$1 vs $100,000 Exotic Food",
+   "title": "$1 vs $100,000 Rare Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "xReCiWbe1UQ",
-   "title": "Which YouTuber Is The Best Cook?",
+   "title": "Which YouTuber Is The Best Chef?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "GPgW3MWmQwM",
-   "title": "I Ate Rare Food In EVERY Color!",
+   "title": "I Ate Rare Food In EVERY Color",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1195,7 +1195,7 @@
   },
   {
    "id": "kIB-ypmiIzo",
-   "title": "I Ate Breakfast From EVERY Country",
+   "title": "I Ate Breakfast From Every Country",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1219,7 +1219,7 @@
   },
   {
    "id": "8WLvEdJODP8",
-   "title": "I Turned A Robot Into A Chef",
+   "title": "I Turned A Robot Into A Cook",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1930,5 +1930,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-18T18:10:41Z"
+ "updated": "2026-11-19T02:38:50Z"
 }
