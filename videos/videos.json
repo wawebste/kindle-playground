@@ -78,6 +78,24 @@
  ],
  "videos": [
   {
+   "id": "s3I0CM0_zso",
+   "title": "The Beginning Of A New Season🙊🍂 🐵 Curious George 🐵 Kids Cartoon 🐵 Kids Movies",
+   "published": "2026-11-19T15:00:10+00:00",
+   "channel": "UCu7IDy0y-ZA0qaG51wrQY6w"
+  },
+  {
+   "id": "nOBAb6EJ0sY",
+   "title": "Peppa Meets the Baby! 💗 BRAND NEW Full Movie | Baby Evie is Born 🍼 | 1 Hour of Kids Cartoons",
+   "published": "2026-11-19T14:15:35+00:00",
+   "channel": "UCAOtE1V7Ots4DjM8JLlrYgg"
+  },
+  {
+   "id": "Ny196TnhlZM",
+   "title": "The Forbidden Place in Arizona That Nobody Can Visit",
+   "published": "2026-11-19T14:00:39+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
    "id": "IUs1epYptIo",
    "title": "A New Ocean Is Dividing Africa in Two",
    "published": "2026-11-19T00:00:33+00:00",
@@ -316,12 +334,6 @@
    "title": "Peppa Pig Tales 2026 ☕ Peppa Visits the CARDBOARD Cafe! 😋 BRAND NEW Tales Minisodes",
    "published": "2026-11-13T10:00:14+00:00",
    "channel": "UCAOtE1V7Ots4DjM8JLlrYgg"
-  },
-  {
-   "id": "WtEZiqy0MA0",
-   "title": "The Ocean’s Scariest Predator Has a Strange Rule About Humans",
-   "published": "2026-11-13T00:00:06+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
    "id": "Tjph07EfHns",
@@ -750,12 +762,6 @@
    "channel": "UCubmcUb9xSSJB_U8Wz4rQ-Q"
   },
   {
-   "id": "eMoEgccxffU",
-   "title": "Peppa Pig Tales 2026 🩷 PINK vs BLACK Dance Battle! 🖤 BRAND NEW Peppa Pig Official",
-   "published": "2026-10-24T10:00:15+00:00",
-   "channel": "UCAOtE1V7Ots4DjM8JLlrYgg"
-  },
-  {
    "id": "Pi9WjqJEa38",
    "title": "Secret Hatching Mission! Is It a Dino? | Topsy & Tim - WildBrain | Kid Movies",
    "published": "2026-10-23T23:00:08+00:00",
@@ -784,12 +790,6 @@
    "title": "🦸 Ben and Holly Become Superheroes to Save the Kingdom! ❄️ | Ben & Holly | Cartoons for Kids",
    "published": "2026-10-22T10:30:05+00:00",
    "channel": "UC2UhuvjTIrR0Ck2KrkvRcuA"
-  },
-  {
-   "id": "egg4oly0XzM",
-   "title": "Food For The Plants🪴 🐵 Curious George 🐵 Kids Cartoon 🐵 Kids Movies",
-   "published": "2026-10-20T15:00:25+00:00",
-   "channel": "UCu7IDy0y-ZA0qaG51wrQY6w"
   },
   {
    "id": "IusUoa6qJ9Q",
@@ -1153,13 +1153,13 @@
   },
   {
    "id": "KqTAVprbJmg",
-   "title": "I Ate At Every Luxury Hotel",
+   "title": "$1 vs $100,000 Hotel Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "oJhdpGp2r-8",
-   "title": "I Cooked Football Players Their Favorite Foods",
+   "title": "I Cooked For EVERY Soccer Star",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1177,7 +1177,7 @@
   },
   {
    "id": "GPgW3MWmQwM",
-   "title": "I Ate Rare Food In EVERY Color",
+   "title": "I Ate Rare Food In EVERY Color!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1189,7 +1189,7 @@
   },
   {
    "id": "zpIhFHYFeew",
-   "title": "Which Country Makes The Best Sandwich?",
+   "title": "I Ate The World's Best Sandwich",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1219,7 +1219,7 @@
   },
   {
    "id": "8WLvEdJODP8",
-   "title": "I Turned A Robot Into A Cook",
+   "title": "I Turned A Robot Into A Chef",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1453,7 +1453,7 @@
   },
   {
    "id": "tP_x_ctVz3Y",
-   "title": "I Cooked YouTubers Their Last Meals",
+   "title": "YouTubers Strangest Last Meals",
    "published": "2026-10-03T16:00:12+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1537,7 +1537,7 @@
   },
   {
    "id": "1fGScw5eX0M",
-   "title": "I Ate The World’s Spiciest Meal",
+   "title": "10 Levels Of Spicy Food",
    "published": "2026-09-12T16:00:00+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1930,5 +1930,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-19T02:38:50Z"
+ "updated": "2026-11-19T18:22:55Z"
 }
