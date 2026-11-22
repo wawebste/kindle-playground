@@ -177,10 +177,29 @@ function popSound(){
   var s=a.createBufferSource(), g=a.createGain(); s.buffer=b; g.gain.value=.5;
   s.connect(g); g.connect(a.destination); s.start();
 }
-function speak(t){
-  try{ if(!window.speechSynthesis) return; speechSynthesis.cancel();
-    var u=new SpeechSynthesisUtterance(t); u.rate=.85; u.pitch=1.15; speechSynthesis.speak(u); }catch(e){}
+/* ---------- voice: recorded clips in sounds/, built-in voice only as a backup ---------- */
+var LN={A:'ay',B:'bee',C:'see',D:'dee',E:'ee',F:'eff',G:'jee',H:'aitch',I:'eye',J:'jay',K:'kay',L:'el',M:'em',
+  N:'en',O:'oh',P:'pee',Q:'cue',R:'are',S:'ess',T:'tee',U:'you',V:'vee',W:'double you',X:'ex',Y:'why',Z:'zee'};
+var player=null, queue=[];
+function slug(t){ return t.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
+function say(list){ queue=list.slice(); try{ if(window.speechSynthesis) speechSynthesis.cancel(); }catch(e){} playNext(); }
+function playNext(){
+  if(player){ player.onended=null; player.onerror=null; try{ player.pause(); }catch(e){} player=null; }
+  if(!queue.length) return;
+  var t=queue.shift(), a;
+  try{ a=new Audio('sounds/'+slug(t)+'.mp3'); }catch(e){ backup(t); return; }
+  player=a;
+  a.onended=playNext;
+  a.onerror=function(){ if(player===a){ player=null; backup(t); } };
+  try{ var p=a.play(); if(p&&p.catch) p.catch(function(){}); }catch(e){}
 }
+function backup(t){ // only used if a clip is missing
+  try{ if(window.speechSynthesis&&speechSynthesis.getVoices().length){
+    var u=new SpeechSynthesisUtterance(t.replace(/[^\w\s',.!?]/g,'')); u.rate=.85; u.pitch=1.15;
+    u.onend=playNext; speechSynthesis.speak(u); return; } }catch(e){}
+  playNext();
+}
+var NUM={3:'three',4:'four',5:'five',6:'six',7:'seven',8:'eight',9:'nine',10:'ten',11:'eleven',12:'twelve'};
 
 /* ---------- drawing Bear ---------- */
 function bearSVG(){
@@ -241,7 +260,7 @@ function showHome(){
   $('helperBtn').className='helper'+(save.helper?' yes':'');
   $('helperTag').textContent=save.helper?'ON':'OFF';
 }
-function toggleHelper(){ save.helper=!save.helper; store(); showHome(); speak(save.helper?'Little helper on':'Little helper off'); }
+function toggleHelper(){ save.helper=!save.helper; store(); showHome(); say([save.helper?'Little helper on':'Little helper off']); }
 
 /* ---------- play ---------- */
 function startCat(c){ C=c; $('home').className='screen'; $('play').className='screen on'; audio(); newWord(); }
@@ -294,13 +313,13 @@ function guess(ch){
   if(over||guessed[ch]) return;
   audio(); guessed[ch]=true;
   if(word.indexOf(ch)>=0){
-    ding(); speak(ch);
+    ding(); say([LN[ch]]);
     drawWord(); drawKeys();
     for(var i=0;i<word.length;i++) if(!guessed[word.charAt(i)]) return;
     win();
   } else {
     var idx=total-1-misses; misses++;
-    popSound(); speak(ch);
+    popSound(); say([LN[ch]]);
     $('bp'+idx).setAttribute('class','bal pop');
     $('sp'+idx).setAttribute('class','str gone');
     lift(); drawKeys();
@@ -311,16 +330,17 @@ function guess(ch){
 function win(){
   over=true; save.solved[C+'-'+W]=true; store();
   $('bearp').setAttribute('class','bearwin');
-  speak(word.toLowerCase()+'! '+'You did it!'); confetti();
+  var cheer=CHEERS[Math.floor(Math.random()*CHEERS.length)];
+  say([word.toLowerCase()+'!', cheer]); confetti();
   setTimeout(function(){
     $('oPic').textContent=pic; $('oWord').textContent=word;
-    $('oMsg').textContent='🌟 '+CHEERS[Math.floor(Math.random()*CHEERS.length)];
+    $('oMsg').textContent='🌟 '+cheer;
     $('over').className='over on';
   },1200);
 }
 function lose(){
   over=true; drawWord(true);
-  speak('Bear floated down safe! The word was '+word.toLowerCase());
+  say(['Bear floated down safe! The word was', word.toLowerCase()]);
   setTimeout(function(){
     $('oPic').textContent=pic; $('oWord').textContent=word;
     $('oMsg').textContent='🐻 Bear landed softly! Let\'s try another!';
@@ -328,7 +348,7 @@ function lose(){
   },1800);
 }
 function nextWord(){ $('over').className='over'; newWord(); }
-function sayClue(){ speak('It\'s a '+word.toLowerCase()+'. It has '+word.length+' letters.'); }
+function sayClue(){ say([word.toLowerCase(), 'It has '+NUM[word.length]+' letters.']); }
 
 function confetti(){
   for(var i=0;i<45;i++){
@@ -338,6 +358,14 @@ function confetti(){
     document.body.appendChild(d);
     (function(x){ setTimeout(function(){ x.remove(); },3800); })(d);
   }
+}
+// every phrase the game can say (used to make the sound files)
+function ALL_PHRASES(){
+  var o=['Little helper on','Little helper off','Bear floated down safe! The word was'].concat(CHEERS);
+  for(var k in LN) o.push(LN[k]);
+  for(var n in NUM) o.push('It has '+NUM[n]+' letters.');
+  CATS.forEach(function(c){ c.list.forEach(function(w){ o.push(w[0].toLowerCase(), w[0].toLowerCase()+'!'); }); });
+  return o;
 }
 showHome();
 </script>
