@@ -78,6 +78,24 @@
  ],
  "videos": [
   {
+   "id": "6-H4KY4lJVE",
+   "title": "What's Beyond the Solar System's Flat Disk?",
+   "published": "2026-11-22T17:00:28+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "l03S24_xTaU",
+   "title": "2 HOURS 🎈 | It's Keepy Uppy Time! 🤩 | Bluey Music, Games, and More 💙 | Bluey",
+   "published": "2026-11-22T16:00:32+00:00",
+   "channel": "UCVzLLZkDuFGAE2BGdBuBNBg"
+  },
+  {
+   "id": "woVEjNnAYDI",
+   "title": "Save the Fish Family!🐠 🐵 Curious George 🐵 Kids Cartoon 🐵 Kids Movies",
+   "published": "2026-11-22T15:00:18+00:00",
+   "channel": "UCu7IDy0y-ZA0qaG51wrQY6w"
+  },
+  {
    "id": "-iSn0xYob2M",
    "title": "The World’s Most Advanced Airport is Sinking",
    "published": "2026-11-22T00:00:37+00:00",
@@ -115,7 +133,7 @@
   },
   {
    "id": "gicEOsFtMxw",
-   "title": "Are Lions Stronger Than Sharks?",
+   "title": "Lions vs Sharks",
    "published": "2026-11-21T14:00:14+00:00",
    "channel": "UCY1kMZp36IQSyNx_9h4mpCg"
   },
@@ -315,12 +333,6 @@
    "id": "wjZ10OVHXZk",
    "title": "Lake Michigan Is Hiding Something Scientists Can't Explain",
    "published": "2026-11-16T01:00:33+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
-   "id": "GfhMejCvqzo",
-   "title": "NO WARNING! A Dormant Volcano Suddenly ROARS TO LIFE — A Terrifying Eruption!",
-   "published": "2026-11-16T00:00:36+00:00",
    "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
@@ -780,12 +792,6 @@
    "channel": "UCUHwBudrD5mZ8dgRnf0Jt8A"
   },
   {
-   "id": "IRDFYqmpJkM",
-   "title": "2 HOURS of FULL EPISODES 👵 💙 | Let's Pretend to be Grannies 🤣 | Bluey",
-   "published": "2026-10-24T15:00:12+00:00",
-   "channel": "UCVzLLZkDuFGAE2BGdBuBNBg"
-  },
-  {
    "id": "26P1KyvrmjI",
    "title": "I Solved Every Board Game",
    "published": "2026-10-24T13:00:22+00:00",
@@ -802,12 +808,6 @@
    "title": "Secret Hatching Mission! Is It a Dino? | Topsy & Tim - WildBrain | Kid Movies",
    "published": "2026-10-23T23:00:08+00:00",
    "channel": "UCUHwBudrD5mZ8dgRnf0Jt8A"
-  },
-  {
-   "id": "rwmBsgGQc6Y",
-   "title": "George And Allie Are DOUBLE TROUBLE!🐵😆 🐵 Curious George 🐵 Kids Cartoon 🐵 Kids Movies",
-   "published": "2026-10-23T15:00:26+00:00",
-   "channel": "UCu7IDy0y-ZA0qaG51wrQY6w"
   },
   {
    "id": "vqOUI-PUY7s",
@@ -1183,37 +1183,37 @@
   },
   {
    "id": "4mGVkTCx2ls",
-   "title": "$1 vs $100,000 Rare Food",
+   "title": "I Ate The World's Most Exotic Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "xReCiWbe1UQ",
-   "title": "Which YouTuber Is The Best Chef?",
+   "title": "Which YouTuber Is The Best Cook?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "GPgW3MWmQwM",
-   "title": "I Ate Rare Food In EVERY Color",
+   "title": "I Ate Rare Food In EVERY Color!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "IzGqMpBIs8o",
-   "title": "I Challenged EVERY YouTube Chef",
+   "title": "I Challenged EVERY YouTube Chef!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "zpIhFHYFeew",
-   "title": "Which Country Makes The Best Sandwich?",
+   "title": "I Ate The World's Best Sandwich",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "kIB-ypmiIzo",
-   "title": "I Ate Breakfast From EVERY Country",
+   "title": "I Ate Breakfast From EVERY Country!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1255,7 +1255,7 @@
   },
   {
    "id": "WP8EMyoWUlM",
-   "title": "I Cooked For A Lion",
+   "title": "I Cooked For EVERY Animal",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1465,7 +1465,7 @@
   },
   {
    "id": "tP_x_ctVz3Y",
-   "title": "YouTubers Strangest Last Meals",
+   "title": "I Cooked EVERY YouTuber’s Last Meals",
    "published": "2026-10-03T16:00:12+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1930,5 +1930,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-22T01:24:52Z"
+ "updated": "2026-11-22T17:13:50Z"
 }
