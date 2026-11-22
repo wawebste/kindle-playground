@@ -199,14 +199,27 @@ var KEY='picture-puzzles-v2', save={solved:{}, helper:true};
 try{ var s=JSON.parse(localStorage.getItem(KEY)); if(s) save=s; }catch(e){}
 function store(){ try{ localStorage.setItem(KEY, JSON.stringify(save)); }catch(e){} }
 
-/* -------- Speech -------- */
-function speak(t){
-  try{
-    if(!window.speechSynthesis) return;
-    speechSynthesis.cancel();
-    var u=new SpeechSynthesisUtterance(t); u.rate=.85; u.pitch=1.15;
-    speechSynthesis.speak(u);
-  }catch(e){}
+/* ---------- voice: recorded clips in sounds/, built-in voice only as a backup ---------- */
+var LN={A:'ay',B:'bee',C:'see',D:'dee',E:'ee',F:'eff',G:'jee',H:'aitch',I:'eye',J:'jay',K:'kay',L:'el',M:'em',
+  N:'en',O:'oh',P:'pee',Q:'cue',R:'are',S:'ess',T:'tee',U:'you',V:'vee',W:'double you',X:'ex',Y:'why',Z:'zee'};
+var player=null, queue=[];
+function slug(t){ return t.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,''); }
+function say(list){ queue=list.slice(); try{ if(window.speechSynthesis) speechSynthesis.cancel(); }catch(e){} playNext(); }
+function playNext(){
+  if(player){ player.onended=null; player.onerror=null; try{ player.pause(); }catch(e){} player=null; }
+  if(!queue.length) return;
+  var t=queue.shift(), a;
+  try{ a=new Audio('sounds/'+slug(t)+'.mp3'); }catch(e){ backup(t); return; }
+  player=a;
+  a.onended=playNext;
+  a.onerror=function(){ if(player===a){ player=null; backup(t); } };
+  try{ var p=a.play(); if(p&&p.catch) p.catch(function(){}); }catch(e){}
+}
+function backup(t){ // only used if a clip is missing
+  try{ if(window.speechSynthesis&&speechSynthesis.getVoices().length){
+    var u=new SpeechSynthesisUtterance(t.replace(/[^\w\s',.!?]/g,'')); u.rate=.85; u.pitch=1.15;
+    u.onend=playNext; speechSynthesis.speak(u); return; } }catch(e){}
+  playNext();
 }
 
 /* -------- State -------- */
@@ -229,7 +242,7 @@ function showHome(){
   $('helperBtn').className='helper'+(save.helper?' yes':'');
   $('helperTag').textContent=save.helper?'ON':'OFF';
 }
-function toggleHelper(){ save.helper=!save.helper; store(); showHome(); speak(save.helper?'Little helper on':'Little helper off'); }
+function toggleHelper(){ save.helper=!save.helper; store(); showHome(); say([save.helper?'Little helper on':'Little helper off']); }
 
 /* -------- Play -------- */
 function startPack(p){
@@ -318,7 +331,7 @@ function hint(){
   if(busy) return;
   for(var i=0;i<word.length;i++){
     if(slots[i]<0||tiles[slots[i]].ch!=word.charAt(i)){
-      placeCorrect(i,true); draw(); speak(word.charAt(i)); check(); return;
+      placeCorrect(i,true); draw(); say([LN[word.charAt(i)]]); check(); return;
     }
   }
 }
@@ -329,7 +342,7 @@ function check(){
   if(got==word){ win(); }
   else{
     var el=$('slots'); el.className='slots'; void el.offsetWidth; el.className='slots shake';
-    speak('Oops, try again!');
+    say(['Oops, try again!']);
   }
 }
 
@@ -338,13 +351,14 @@ function win(){
   save.solved[P+'-'+Q]=true; store(); drawDots();
   $('slots').className='slots win';
   var z=PACKS[P].list[Q];
-  speak(z[1]+', '+z[3]+'. '+word.toLowerCase()+'!');
+  var cheer=CHEERS[Math.floor(Math.random()*CHEERS.length)];
+  say([z[1], z[3], word.toLowerCase()+'!', cheer]);
   confetti();
   setTimeout(function(){
     $('winEq').textContent=z[0]+' + '+z[2]+' =';
     $('winPic').textContent=z[4];
     $('winWord').textContent=word;
-    $('winYay').textContent='🌟 '+CHEERS[Math.floor(Math.random()*CHEERS.length)];
+    $('winYay').textContent='🌟 '+cheer;
     $('win').className='win on';
   }, 900);
 }
@@ -354,11 +368,11 @@ function next(){
   var L=PACKS[P].list.length;
   for(var n=1;n<=L;n++){ var q=(Q+n)%L; if(!save.solved[P+'-'+q]){ Q=q; load(); return; } }
   // whole pack done!
-  speak('You finished all the '+PACKS[P].name+'!'); confetti(); showHome();
+  say(['You finished the whole level!']); confetti(); showHome();
 }
 
-function sayPart(n){ var z=PACKS[P].list[Q]; speak(n?z[3]:z[1]); }
-function speakWord(){ var z=PACKS[P].list[Q]; speak(z[1]+' plus '+z[3]); }
+function sayPart(n){ var z=PACKS[P].list[Q]; say([n?z[3]:z[1]]); }
+function speakWord(){ var z=PACKS[P].list[Q]; say([z[1],'plus',z[3]]); }
 
 function confetti(){
   var colors=['#ff6b8b','#ffc93c','#36c26b','#4db8ff','#b388ff','#ff9f43'];
@@ -374,6 +388,13 @@ function confetti(){
 }
 
 window.addEventListener('resize', function(){ if($('play').className.indexOf('on')>=0){ var s=Math.floor(Math.min(62,(Math.min(window.innerWidth,900)-40)/(word.length+0.9))); document.documentElement.style.setProperty('--s', s+'px'); } });
+// every phrase the game can say (used to make the sound files)
+function ALL_PHRASES(){
+  var o=['Little helper on','Little helper off','Oops, try again!','You finished the whole level!','plus'].concat(CHEERS);
+  for(var k in LN) o.push(LN[k]);
+  PACKS.forEach(function(p){ p.list.forEach(function(z){ o.push(z[1],z[3],(z[1]+z[3])+'!'); }); });
+  return o;
+}
 showHome();
 </script>
 </body>
