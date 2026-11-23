@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<title>Nail Salon</title>
+<style>
+:root{--ink:#5a2a5e;--pink:#ff4f9a;}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html,body{margin:0;height:100%;overflow:hidden;}
+body{font-family:"Trebuchet MS","Comic Sans MS",system-ui,sans-serif;color:var(--ink);user-select:none;-webkit-user-select:none;
+  background:radial-gradient(circle at 20% 10%,#fff6fb 0,#ffe3f1 40%,#e9dcff 100%);display:flex;flex-direction:column;}
+header{display:flex;align-items:center;gap:10px;padding:8px 12px 4px;}
+h1{margin:0;font-size:26px;flex:1;color:var(--pink);text-shadow:0 2px 0 #fff;white-space:nowrap;overflow:hidden;}
+.btn{border:none;border-radius:999px;background:#fff;box-shadow:0 3px 0 rgba(90,42,94,.2);font:inherit;font-weight:700;color:var(--ink);
+  padding:8px 16px;font-size:18px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;}
+.btn:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(90,42,94,.2);}
+.btn.round{width:50px;height:50px;padding:0;font-size:26px;}
+.btn[disabled]{opacity:.4;}
+.btn.big{background:var(--pink);color:#fff;}
+main{flex:1;display:flex;min-height:0;}
+#stage{flex:1;min-width:0;min-height:0;position:relative;}
+#hand{position:absolute;inset:0;width:100%;height:100%;touch-action:none;}
+#hand.wiggle{animation:wig .5s ease-in-out 3;}
+@keyframes wig{0%,100%{transform:rotate(0)}25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
+.hint{position:absolute;top:6px;left:50%;transform:translateX(-50%);background:#fff;border-radius:999px;padding:6px 16px;
+  font-weight:700;font-size:16px;box-shadow:0 2px 6px rgba(90,42,94,.15);white-space:nowrap;pointer-events:none;z-index:2;}
+#panel{width:min(44vw,440px);display:flex;flex-direction:column;padding:6px 10px 10px;gap:8px;min-height:0;}
+@media (orientation:portrait){main{flex-direction:column}#panel{width:auto;height:46vh}}
+.tabs{display:flex;gap:6px;}
+.tab{flex:1 1 0;min-width:0;border:none;border-radius:16px;background:rgba(255,255,255,.55);font:inherit;font-weight:700;font-size:12px;
+  padding:5px 2px;color:var(--ink);display:flex;flex-direction:column;align-items:center;cursor:pointer;}
+.tab span{font-size:26px;line-height:1.15;}
+.tab.on{background:#fff;box-shadow:0 0 0 3px var(--pink);}
+.tray{flex:1;overflow-y:auto;background:#fff;border-radius:22px;padding:10px 12px;box-shadow:0 4px 14px rgba(90,42,94,.12);-webkit-overflow-scrolling:touch;}
+.tray h3{margin:4px 0 8px;font-size:16px;}
+.grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
+.item{display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;font:inherit;font-size:12px;font-weight:700;
+  color:var(--ink);padding:2px;cursor:pointer;}
+.chip{width:56px;height:56px;border-radius:50%;box-shadow:inset 0 -6px 0 rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.18);font-size:30px;
+  display:flex;align-items:center;justify-content:center;background:#f4eef7;overflow:hidden;}
+.chip.wide{width:96px;border-radius:16px;}
+.chip svg{width:100%;height:100%;}
+.item.on .chip{box-shadow:0 0 0 4px #fff,0 0 0 7px var(--pink);}
+.allbtn{width:100%;margin-bottom:10px;}
+.pop{position:fixed;pointer-events:none;font-size:34px;z-index:9;animation:pop .7s ease-out forwards;}
+@keyframes pop{0%{transform:translate(-50%,-50%) scale(.3);opacity:1}100%{transform:translate(-50%,-140%) scale(1.4);opacity:0}}
+.conf{position:fixed;top:-50px;pointer-events:none;font-size:34px;z-index:9;animation:fall linear forwards;}
+@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}
+.tw{transform-box:fill-box;transform-origin:center;animation:tw 1.6s ease-in-out infinite;}
+@keyframes tw{0%,100%{opacity:.15;transform:scale(.5)}50%{opacity:1;transform:scale(1.1)}}
+</style>
+</head>
+<body>
+<header>
+  <a class="btn round" href="../" aria-label="Home">🏠</a>
+  <h1>💅 Nail Salon</h1>
+  <button class="btn round" id="undo" aria-label="Undo">↩️</button>
+  <button class="btn big" id="show">🎉 Show off!</button>
+</header>
+<main>
+  <div id="stage">
+    <div class="hint" id="hint"></div>
+    <svg id="hand" viewBox="20 50 360 470" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="gRainbow" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ff3b3b"/><stop offset=".2" stop-color="#ff9a1f"/><stop offset=".4" stop-color="#ffe11f"/>
+          <stop offset=".6" stop-color="#4fd94a"/><stop offset=".8" stop-color="#36a3ff"/><stop offset="1" stop-color="#9b5cff"/>
+        </linearGradient>
+        <radialGradient id="gGalaxy" cx=".35" cy=".3" r=".9">
+          <stop offset="0" stop-color="#b37dff"/><stop offset=".4" stop-color="#4a238f"/><stop offset="1" stop-color="#120a33"/>
+        </radialGradient>
+        <pattern id="pStars" width="20" height="20" patternUnits="userSpaceOnUse">
+          <circle cx="3" cy="5" r=".8" fill="#fff"/><circle cx="14" cy="3" r=".6" fill="#fff"/>
+          <circle cx="9" cy="14" r="1.1" fill="#fff"/><circle cx="17" cy="16" r=".7" fill="#ffe9a8"/>
+        </pattern>
+        <pattern id="pGlitter" width="22" height="22" patternUnits="userSpaceOnUse">
+          <rect width="22" height="22" fill="#fff" opacity=".08"/>
+          <circle cx="3" cy="4" r="1.1" fill="#fff"/><circle cx="11" cy="2" r=".9" fill="#ffe27a"/>
+          <circle cx="17" cy="9" r="1.2" fill="#fff"/><circle cx="6" cy="13" r="1" fill="#ffd1f0"/>
+          <circle cx="14" cy="16" r="1.3" fill="#ffe27a"/><circle cx="20" cy="19" r=".8" fill="#fff"/>
+          <circle cx="2" cy="19" r="1.1" fill="#bdf3ff"/><circle cx="9" cy="8" r=".7" fill="#fff"/>
+        </pattern>
+        <pattern id="pDots" width="11" height="11" patternUnits="userSpaceOnUse">
+          <circle cx="3" cy="3" r="2.2" fill="#fff"/><circle cx="8.5" cy="8.5" r="2.2" fill="#fff"/>
+        </pattern>
+        <pattern id="pStripes" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+          <rect width="3.5" height="9" fill="#fff" opacity=".85"/>
+        </pattern>
+        <pattern id="pHearts" width="12" height="12" patternUnits="userSpaceOnUse">
+          <path transform="translate(6 6.5)" d="M0 2.8 C-4.8 -0.8 -3.6 -6 0 -3.2 C3.6 -6 4.8 -0.8 0 2.8 Z" fill="#fff"/>
+        </pattern>
+        <linearGradient id="gChrome" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".35" stop-color="#fff" stop-opacity=".75"/>
+          <stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset=".7" stop-color="#fff" stop-opacity=".45"/>
+          <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="gGold" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fff3b0"/><stop offset=".45" stop-color="#e3b33c"/><stop offset=".8" stop-color="#a8791a"/><stop offset="1" stop-color="#f2d36b"/>
+        </linearGradient>
+        <linearGradient id="gSilver" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#c3cad3"/><stop offset=".8" stop-color="#8d96a3"/><stop offset="1" stop-color="#eef1f5"/>
+        </linearGradient>
+        <radialGradient id="gGem" cx=".35" cy=".3" r=".8">
+          <stop offset="0" stop-color="#fff"/><stop offset=".3" stop-color="#9be7ff"/><stop offset="1" stop-color="#2b8fd8"/>
+        </radialGradient>
+        <radialGradient id="gGemPink" cx=".35" cy=".3" r=".8">
+          <stop offset="0" stop-color="#fff"/><stop offset=".3" stop-color="#ffb3dd"/><stop offset="1" stop-color="#d92a7a"/>
+        </radialGradient>
+        <radialGradient id="gPearl" cx=".35" cy=".3" r=".8">
+          <stop offset="0" stop-color="#fff"/><stop offset=".5" stop-color="#f6f0e8"/><stop offset="1" stop-color="#cbbfb0"/>
+        </radialGradient>
+      </defs>
+      <defs id="dyn"></defs>
+      <g id="layerOutline"></g>
+      <g id="layerFill"></g>
+      <g id="layerBracelet"></g>
+      <g id="layerRings"></g>
+      <g id="layerNails"></g>
+    </svg>
+  </div>
+  <div id="panel">
+    <div class="tabs" id="tabs"></div>
+    <div class="tray" id="tray"></div>
+  </div>
+</main>
+
+<script>
+(function(){
+const NS='http://www.w3.org/2000/svg';
+const $=id=>document.getElementById(id);
+const svg=$('hand');
+function el(tag,attrs,parent){const e=document.createElementNS(NS,tag);if(attrs)for(const k in attrs)e.setAttribute(k,attrs[k]);if(parent)parent.appendChild(e);return e;}
+
+/* ---------- hand geometry ---------- */
+const FINGERS=[
+  {b:[128,372],t:[62,262],w:58,ring:.55}, // thumb
+  {b:[152,300],t:[142,118],w:52,ring:.72},
+  {b:[202,295],t:[206,92], w:55,ring:.72},
+  {b:[252,300],t:[266,118],w:52,ring:.72},
+  {b:[298,322],t:[322,180],w:44,ring:.70}
+];
+FINGERS.forEach(f=>{
+  const dx=f.t[0]-f.b[0],dy=f.t[1]-f.b[1];
+  f.len=Math.hypot(dx,dy);
+  f.ang=Math.atan2(dy,dx)*180/Math.PI+90;
+  f.ux=dx/f.len;f.uy=dy/f.len;
+});
+const PALM={x:115,y:268,w:200,h:182,rx:64};
+const WRIST={x:163,y:400,w:114,h:130};
+
+const SKINS=[
+  ['#ffe0cc','#e2ae92'],['#f5c9a7','#d39a74'],['#e0a878','#b57a4c'],
+  ['#c68650','#955c2e'],['#8d5a3b','#5f371d'],['#5e3a24','#371f10'],
+  ['#d9c2ff','#a98ad9'],['#b9f0a8','#7fc26b'],['#b8e0ff','#7fb3dc']
+];
+const SHAPES=[['round','Round'],['square','Square'],['almond','Almond'],['stiletto','Pointy']];
+
+function dimsW(w){const nw=w*.74,L=w*.98,yT=-w/2+5;return {w,nw,L,yT,yB:yT+L};}
+function dims(i){return dimsW(FINGERS[i].w);}
+function nailPath(d,shape){
+  const h=d.nw/2,T=d.yT,B=d.yB,c=B+10;
+  const cut=`L ${h} ${B} Q 0 ${c} ${-h} ${B} Z`;
+  switch(shape){
+    case 'square':return `M ${-h} ${B} L ${-h} ${T+5} Q ${-h} ${T} ${-h+5} ${T} L ${h-5} ${T} Q ${h} ${T} ${h} ${T+5} ${cut}`;
+    case 'almond':return `M ${-h} ${B} L ${-h} ${T+h} Q ${-h} ${T-2} 0 ${T-9} Q ${h} ${T-2} ${h} ${T+h} ${cut}`;
+    case 'stiletto':return `M ${-h} ${B} L ${-h} ${T+h*1.2} Q ${-h*.6} ${T-4} 0 ${T-20} Q ${h*.6} ${T-4} ${h} ${T+h*1.2} ${cut}`;
+    default:return `M ${-h} ${B} L ${-h} ${T+h} A ${h} ${h} 0 0 1 ${h} ${T+h} ${cut}`;
+  }
+}
+function heartD(s){return `M0 ${.35*s} C ${-.6*s} ${-.1*s} ${-.45*s} ${-.75*s} 0 ${-.4*s} C ${.45*s} ${-.75*s} ${.6*s} ${-.1*s} 0 ${.35*s} Z`;}
+function starD(s){return `M0 ${-s} Q0 0 ${s} 0 Q0 0 0 ${s} Q0 0 ${-s} 0 Q0 0 0 ${-s} Z`;}
+
+/* ---------- state ---------- */
+const KEY='nailSalonV1';
+function blankNail(){return {color:null,fx:{},strokes:[],stickers:[]};}
+function blankState(){return {skin:1,shape:'round',nails:[0,1,2,3,4].map(blankNail),rings:[null,null,null,null,null],bracelet:null};}
+let state=blankState();
+try{
+  const s=JSON.parse(localStorage.getItem(KEY));
+  if(s&&Array.isArray(s.nails)&&s.nails.length===5){
+    state=Object.assign(blankState(),s);
+    state.nails=s.nails.map(n=>Object.assign(blankNail(),n));
+  }
+}catch(e){}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}}
+let history=[];
+function snap(){history.push(JSON.stringify(state));if(history.length>40)history.shift();updUndo();}
+function updUndo(){$('undo').disabled=!history.length;}
+
+const sel={tab:'polish',polish:'#ff4f9a',fx:'glitter',draw:'#ffffff',size:5,sticker:'💖',ring:'gold'};
+
+/* ---------- sound ---------- */
+let ac=null;
+function tone(f,dur,type,vol,f2){
+  try{
+    ac=ac||new (window.AudioContext||window.webkitAudioContext)();
+    const t=ac.currentTime,o=ac.createOscillator(),g=ac.createGain();
+    o.type=type||'sine';o.frequency.setValueAtTime(f,t);
+    if(f2)o.frequency.exponentialRampToValueAtTime(f2,t+dur);
+    g.gain.setValueAtTime(vol||.07,t);g.gain.exponentialRampToValueAtTime(.0001,t+dur);
+    o.connect(g);g.connect(ac.destination);o.start(t);o.stop(t+dur+.02);
+  }catch(e){}
+}
+const sfx={
+  paint:()=>tone(300,.35,'triangle',.06,900),
+  pop:()=>tone(660,.12,'sine',.08,990),
+  ding:()=>{tone(880,.15);setTimeout(()=>tone(1320,.2),90);},
+  tick:()=>tone(520,.06,'square',.03),
+  party:()=>[523,659,784,1047].forEach((f,i)=>setTimeout(()=>tone(f,.25,'triangle',.07),i*110))
+};
+function popAt(x,y,ch){const s=document.createElement('div');s.className='pop';s.textContent=ch||'✨';s.style.left=x+'px';s.style.top=y+'px';document.body.appendChild(s);setTimeout(()=>s.remove(),750);}
+
+/* ---------- build hand ---------- */
+const fingerFills=[],fingerOutlines=[],nailG=[],bedP=[],edgeP=[],contentG=[],stickerG=[],clipP=[];
+let palmFill,palmOut,wristFill,wristOut;
+function buildHand(){
+  const lo=$('layerOutline'),lf=$('layerFill'),ln=$('layerNails'),dyn=$('dyn');
+  wristOut=el('rect',{x:WRIST.x,y:WRIST.y,width:WRIST.w,height:WRIST.h,rx:20,'stroke-width':6},lo);
+  palmOut=el('rect',{x:PALM.x,y:PALM.y,width:PALM.w,height:PALM.h,rx:PALM.rx,'stroke-width':6},lo);
+  FINGERS.forEach((f,i)=>{
+    fingerOutlines[i]=el('line',{x1:f.b[0],y1:f.b[1],x2:f.t[0],y2:f.t[1],'stroke-width':f.w+6,'stroke-linecap':'round'},lo);
+  });
+  wristFill=el('rect',{x:WRIST.x,y:WRIST.y,width:WRIST.w,height:WRIST.h,rx:20},lf);
+  palmFill=el('rect',{x:PALM.x,y:PALM.y,width:PALM.w,height:PALM.h,rx:PALM.rx},lf);
+  FINGERS.forEach((f,i)=>{
+    fingerFills[i]=el('line',{x1:f.b[0],y1:f.b[1],x2:f.t[0],y2:f.t[1],'stroke-width':f.w,'stroke-linecap':'round','data-finger':i},lf);
+    // knuckle creases
+    const k=f.len*.42,cx=f.t[0]-f.ux*k,cy=f.t[1]-f.uy*k;
+    const cg=el('g',{transform:`translate(${cx} ${cy}) rotate(${f.ang})`,'pointer-events':'none',class:'crease'},lf);
+    el('path',{d:`M ${-f.w*.18} -3 Q 0 0 ${f.w*.18} -3`,fill:'none','stroke-width':2,'stroke-linecap':'round'},cg);
+    el('path',{d:`M ${-f.w*.14} 3 Q 0 6 ${f.w*.14} 3`,fill:'none','stroke-width':2,'stroke-linecap':'round'},cg);
+    // nail
+    const cp=el('clipPath',{id:'clip'+i},dyn);clipP[i]=el('path',{},cp);
+    const g=el('g',{transform:`translate(${f.t[0]} ${f.t[1]}) rotate(${f.ang})`,'data-nail':i},ln);
+    nailG[i]=g;
+    bedP[i]=el('path',{fill:'rgba(255,185,185,.55)'},g);
+    contentG[i]=el('g',{'clip-path':`url(#clip${i})`},g);
+    edgeP[i]=el('path',{fill:'none',stroke:'rgba(80,30,40,.25)','stroke-width':1.3},g);
+    stickerG[i]=el('g',{},g);
+  });
+}
+function applySkin(){
+  const [fill,out]=SKINS[state.skin]||SKINS[1];
+  [wristOut,palmOut].forEach(e=>{e.setAttribute('fill',out);e.setAttribute('stroke',out);});
+  fingerOutlines.forEach(e=>e.setAttribute('stroke',out));
+  [wristFill,palmFill].forEach(e=>e.setAttribute('fill',fill));
+  fingerFills.forEach(e=>e.setAttribute('stroke',fill));
+  document.querySelectorAll('.crease path').forEach(p=>{p.setAttribute('stroke',out);p.setAttribute('stroke-opacity','.6');});
+}
+function applyShape(){
+  for(let i=0;i<5;i++){const d=nailPath(dims(i),state.shape);clipP[i].setAttribute('d',d);bedP[i].setAttribute('d',d);edgeP[i].setAttribute('d',d);}
+}
+
+/* ---------- render nails ---------- */
+function fillFor(color,i,ombre){
+  if(color==='rainbow')return 'url(#gRainbow)';
+  if(color==='galaxy')return 'url(#gGalaxy)';
+  if(ombre&&i!=null){
+    const dyn=$('dyn');let g=$('omb'+i);if(g)g.remove();
+    g=el('linearGradient',{id:'omb'+i,x1:0,y1:0,x2:0,y2:1},dyn);
+    el('stop',{offset:'0','stop-color':'#ffffff'},g);el('stop',{offset:'.25','stop-color':'#ffffff'},g);el('stop',{offset:'1','stop-color':color},g);
+    return `url(#omb${i})`;
+  }
+  return color;
+}
+function coverRect(d,fill,op){const a={x:-d.nw/2-4,y:d.yT-24,width:d.nw+8,height:d.L+40,fill};if(op!=null)a.opacity=op;return a;}
+function strokeD(p){if(!p.length)return '';let s=`M ${p[0][0]} ${p[0][1]}`;if(p.length===1)s+=` L ${p[0][0]+.1} ${p[0][1]}`;for(let k=1;k<p.length;k++)s+=` L ${p[k][0]} ${p[k][1]}`;return s;}
+function renderNail(i){
+  const n=state.nails[i],d=dims(i),c=contentG[i],fx=n.fx||{};
+  c.innerHTML='';stickerG[i].innerHTML='';
+  if(n.color){
+    el('rect',coverRect(d,fillFor(n.color,i,fx.ombre&&n.color!=='rainbow'&&n.color!=='galaxy')),c);
+    if(n.color==='galaxy')el('rect',coverRect(d,'url(#pStars)'),c);
+  }
+  if(fx.chrome)el('rect',coverRect(d,'url(#gChrome)'),c);
+  if(fx.stripes)el('rect',coverRect(d,'url(#pStripes)'),c);
+  if(fx.dots)el('rect',coverRect(d,'url(#pDots)',.9),c);
+  if(fx.hearts)el('rect',coverRect(d,'url(#pHearts)',.9),c);
+  if(fx.glitter)el('rect',coverRect(d,'url(#pGlitter)'),c);
+  if(fx.french)el('ellipse',{cx:0,cy:d.yT-d.L*.1,rx:d.nw*.78,ry:d.L*.38,fill:n.color==='#ffffff'?'#ff9ccc':'#ffffff'},c);
+  n.strokes.forEach(s=>el('path',{d:strokeD(s.p),fill:'none',stroke:s.c,'stroke-width':s.w,'stroke-linecap':'round','stroke-linejoin':'round'},c));
+  if(fx.gems){[-.26,0,.26].forEach(k=>{el('circle',{cx:d.nw*k,cy:d.yB-6,r:d.nw*.12,fill:'url(#gGem)',stroke:'#fff','stroke-width':.8},c);});}
+  if(fx.twinkle){
+    [[-.2,.3,0],[.18,.55,.5],[-.05,.82,1]].forEach(([kx,ky,dl])=>{
+      const g=el('g',{transform:`translate(${d.nw*kx} ${d.yT+d.L*ky})`},c);
+      const p=el('path',{d:starD(d.nw*.2),fill:'#fff',class:'tw'},g);p.style.animationDelay=dl+'s';
+    });
+  }
+  // shine
+  el('ellipse',{cx:-d.nw*.22,cy:d.yT+d.L*.45,rx:d.nw*.09,ry:d.L*.28,fill:'#fff',opacity:n.color?.45:.3},c);
+  n.stickers.forEach(s=>{
+    const t=el('text',{x:s.x,y:s.y,'font-size':s.s,'text-anchor':'middle','dominant-baseline':'central',transform:`rotate(${s.r} ${s.x} ${s.y})`},stickerG[i]);
+    t.textContent=s.e;
+  });
+}
+function renderAll(){applySkin();applyShape();for(let i=0;i<5;i++)renderNail(i);renderRings();renderBracelet();save();}
+
+/* ---------- rings & bracelets ---------- */
+const RINGS=[['gold','Gold'],['silver','Silver'],['gemPink','Pink gem'],['gemBlue','Blue gem'],['heart','Heart'],['flower','Flower'],['none','Take off']];
+function ringG(style,w,parent){
+  const g=el('g',{},parent),bw=w+6;
+  el('rect',{x:-bw/2,y:-6,width:bw,height:12,rx:6,fill:style==='silver'||style==='gemBlue'?'url(#gSilver)':'url(#gGold)',stroke:'rgba(0,0,0,.25)','stroke-width':1},g);
+  if(style==='gemPink'||style==='gemBlue'){
+    el('circle',{cx:0,cy:0,r:w*.22,fill:style==='gemPink'?'url(#gGemPink)':'url(#gGem)',stroke:'#fff','stroke-width':2},g);
+  }else if(style==='heart'){
+    el('path',{d:heartD(w*.55),fill:'#ff3d7f',stroke:'#fff','stroke-width':1.5},g);
+  }else if(style==='flower'){
+    for(let k=0;k<5;k++){const a=k*72*Math.PI/180;el('circle',{cx:Math.sin(a)*w*.14,cy:-Math.cos(a)*w*.14,r:w*.12,fill:'#ffb3d9',stroke:'#fff','stroke-width':1},g);}
+    el('circle',{cx:0,cy:0,r:w*.09,fill:'#ffd21f'},g);
+  }
+  return g;
+}
+function renderRings(){
+  const L=$('layerRings');L.innerHTML='';
+  state.rings.forEach((r,i)=>{
+    if(!r)return;const f=FINGERS[i];
+    const x=f.b[0]+(f.t[0]-f.b[0])*(1-f.ring),y=f.b[1]+(f.t[1]-f.b[1])*(1-f.ring);
+    const g=el('g',{transform:`translate(${x} ${y}) rotate(${f.ang})`,'data-finger':i},L);
+    ringG(r,f.w,g);
+  });
+}
+const BRACELETS=[['beads','Beads'],['pearls','Pearls'],['bangle','Gold'],['charms','Charms'],['watch','Watch'],['none','Take off']];
+function braceletG(style,parent){
+  const g=el('g',{},parent),y=486,x1=160,x2=280;
+  if(style==='beads'||style==='pearls'){
+    el('line',{x1:x1-4,y1:y,x2:x2+4,y2:y,stroke:'#999','stroke-width':2},g);
+    const cols=['#ff3b3b','#ff9a1f','#ffe11f','#4fd94a','#36a3ff','#9b5cff','#ff5fa8'];
+    const step=style==='beads'?15:13.3,r=style==='beads'?8:6.8;let k=0;
+    for(let x=x1;x<=x2+.5;x+=step,k++){
+      el('circle',{cx:x,cy:y,r,fill:style==='beads'?cols[k%cols.length]:'url(#gPearl)',stroke:'rgba(0,0,0,.2)','stroke-width':1},g);
+      el('circle',{cx:x-r*.35,cy:y-r*.35,r:r*.28,fill:'#fff',opacity:.7},g);
+    }
+  }else if(style==='bangle'){
+    el('rect',{x:x1-6,y:y-9,width:x2-x1+12,height:18,rx:9,fill:'url(#gGold)',stroke:'rgba(0,0,0,.25)','stroke-width':1},g);
+    el('rect',{x:x1+4,y:y-5,width:x2-x1-8,height:3,rx:1.5,fill:'#fff',opacity:.6},g);
+  }else if(style==='charms'){
+    el('line',{x1:x1-4,y1:y-6,x2:x2+4,y2:y-6,stroke:'#e3b33c','stroke-width':3,'stroke-dasharray':'4 2'},g);
+    ['⭐','💖','🌙','🦋','🌸'].forEach((c,k)=>{
+      const cx=x1+12+k*24;el('line',{x1:cx,y1:y-6,x2:cx,y2:y+2,stroke:'#e3b33c','stroke-width':1.5},g);
+      const t=el('text',{x:cx,y:y+10,'font-size':15,'text-anchor':'middle','dominant-baseline':'central'},g);t.textContent=c;
+    });
+  }else if(style==='watch'){
+    el('rect',{x:x1-4,y:y-8,width:x2-x1+8,height:16,rx:8,fill:'#ff7ab8',stroke:'rgba(0,0,0,.2)','stroke-width':1},g);
+    el('circle',{cx:220,cy:y,r:18,fill:'#fff',stroke:'#c47dff','stroke-width':5},g);
+    el('line',{x1:220,y1:y,x2:220,y2:y-11,stroke:'#5a2a5e','stroke-width':2.5,'stroke-linecap':'round'},g);
+    el('line',{x1:220,y1:y,x2:228,y2:y+3,stroke:'#5a2a5e','stroke-width':2.5,'stroke-linecap':'round'},g);
+    el('circle',{cx:220,cy:y,r:2,fill:'#ff4f9a'},g);
+  }
+  return g;
+}
+function renderBracelet(){const L=$('layerBracelet');L.innerHTML='';if(state.bracelet)braceletG(state.bracelet,L);}
+
+/* ---------- actions ---------- */
+function screenOf(i){const r=nailG[i].getBoundingClientRect();return [r.left+r.width/2,r.top+r.height/2];}
+function animatePaint(i,color,delay){
+  setTimeout(()=>{
+    const d=dims(i),c=contentG[i],n=state.nails[i];
+    const bot=d.yB+12,top=d.yT-24,H=bot-top;
+    const r=el('rect',{x:-d.nw/2-4,width:d.nw+8,y:bot,height:0,fill:color?fillFor(color):'rgba(255,215,210,1)'});
+    c.insertBefore(r,n.color?(c.children[1]||null):c.firstChild);
+    sfx.paint();
+    const t0=performance.now(),dur=420;
+    (function step(t){
+      const k=Math.max(0,Math.min(1,(t-t0)/dur)),e=1-Math.pow(1-k,3);
+      r.setAttribute('height',H*e);r.setAttribute('y',bot-H*e);
+      if(k<1)requestAnimationFrame(step);
+      else{
+        if(color)n.color=color;else state.nails[i]=blankNail();
+        renderNail(i);save();const [x,y]=screenOf(i);popAt(x,y,color?'✨':'🫧');
+      }
+    })(t0);
+  },delay||0);
+}
+function paint(i,delay){animatePaint(i,sel.polish==='remove'?null:sel.polish,delay);}
+function toggleFx(i,name,val){const fx=state.nails[i].fx;fx[name]=val==null?!fx[name]:val;renderNail(i);}
+function clampSticker(i,x,y,s){
+  const d=dims(i),h=d.nw/2;
+  return [Math.max(-h+s*.3,Math.min(h-s*.3,x)),Math.max(d.yT+s*.4,Math.min(d.yB-s*.35,y))];
+}
+function addSticker(i,x,y){
+  const n=state.nails[i];
+  if(sel.sticker==='peel'){if(n.stickers.length){n.stickers.pop();renderNail(i);sfx.tick();return true;}return false;}
+  if(n.stickers.length>=6)n.stickers.shift();
+  const s=Math.round(dims(i).nw*.62);
+  const [cx,cy]=clampSticker(i,x,y,s);
+  n.stickers.push({e:sel.sticker,x:+cx.toFixed(1),y:+cy.toFixed(1),s,r:Math.round(Math.random()*40-20)});
+  renderNail(i);sfx.pop();return true;
+}
+function localPt(e,g){const p=svg.createSVGPoint();p.x=e.clientX;p.y=e.clientY;return p.matrixTransform(g.getScreenCTM().inverse());}
+
+let cur=null;
+svg.addEventListener('pointerdown',e=>{
+  const nEl=e.target.closest&&e.target.closest('[data-nail]');
+  const fEl=e.target.closest&&e.target.closest('[data-finger]');
+  const i=nEl?+nEl.dataset.nail:fEl?+fEl.dataset.finger:-1;
+  if(i<0)return;
+  e.preventDefault();
+  const t=sel.tab;
+  if(t==='polish'){snap();paint(i);}
+  else if(t==='effects'){snap();toggleFx(i,sel.fx);save();sfx.ding();popAt(e.clientX,e.clientY,state.nails[i].fx[sel.fx]?'✨':'💨');}
+  else if(t==='stickers'){snap();const p=localPt(e,nailG[i]);if(addSticker(i,p.x,p.y))save();else history.pop(),updUndo();}
+  else if(t==='bling'){
+    snap();state.rings[i]=(sel.ring==='none'||state.rings[i]===sel.ring)?null:sel.ring;renderRings();save();
+    if(state.rings[i]){sfx.ding();popAt(e.clientX,e.clientY,'💍');}else sfx.tick();
+  }
+  else if(t==='draw'){
+    snap();const p=localPt(e,nailG[i]);
+    const path=el('path',{fill:'none',stroke:sel.draw,'stroke-width':sel.size,'stroke-linecap':'round','stroke-linejoin':'round'});
+    const c=contentG[i];c.insertBefore(path,c.lastChild); // under shine
+    cur={i,path,pts:[[+p.x.toFixed(1),+p.y.toFixed(1)]],g:nailG[i]};
+    path.setAttribute('d',strokeD(cur.pts));
+    try{svg.setPointerCapture(e.pointerId);}catch(_){}
+    sfx.tick();
+  }
+});
+svg.addEventListener('pointermove',e=>{
+  if(!cur)return;e.preventDefault();
+  const p=localPt(e,cur.g),last=cur.pts[cur.pts.length-1];
+  if(Math.hypot(p.x-last[0],p.y-last[1])<1.2)return;
+  cur.pts.push([+p.x.toFixed(1),+p.y.toFixed(1)]);cur.path.setAttribute('d',strokeD(cur.pts));
+});
+function endStroke(){if(!cur)return;state.nails[cur.i].strokes.push({c:sel.draw,w:sel.size,p:cur.pts});cur=null;save();}
+svg.addEventListener('pointerup',endStroke);svg.addEventListener('pointercancel',endStroke);
+
+$('undo').onclick=()=>{if(!history.length)return;state=JSON.parse(history.pop());updUndo();renderAll();sfx.tick();showTab(sel.tab);};
+$('show').onclick=()=>{
+  sfx.party();svg.classList.remove('wiggle');void svg.getBoundingClientRect();svg.classList.add('wiggle');
+  const em=['💅','✨','💖','⭐','🌈','💎','🎀','🌸','🦄','💍'];
+  for(let k=0;k<36;k++){
+    const s=document.createElement('div');s.className='conf';s.textContent=em[k%em.length];
+    s.style.left=(Math.random()*100)+'vw';s.style.animationDuration=(2+Math.random()*2)+'s';s.style.animationDelay=(Math.random()*.8)+'s';
+    document.body.appendChild(s);setTimeout(()=>s.remove(),5000);
+  }
+  for(let i=0;i<5;i++){const [x,y]=screenOf(i);setTimeout(()=>popAt(x,y,'✨'),i*120);}
+};
+
+/* ---------- panel ---------- */
+const TABS=[['polish','🎨','Polish'],['effects','✨','Fancy'],['draw','🖌️','Draw'],['stickers','⭐','Stickers'],['bling','💍','Bling'],['hand','✋','Hand']];
+const HINTS={polish:'Pick a color, then tap a nail 💅',effects:'Pick a fancy look, tap a nail ✨',draw:'Pick a color, draw on a nail 🖌️',
+  stickers:'Pick a sticker, tap a nail ⭐',bling:'Pick a ring, tap a finger 💍',hand:'Pick a hand and nail shape ✋'};
+const POLISH=['#ff4f9a','#ff8fc7','#ffc2dd','#e8202a','#ff7a1a','#ffd21f','#7ad94a','#18c4a8','#36a3ff','#1f3fbf','#7d5cff','#c47dff','#ffffff','#222233','#d4af37','#c0c8d2','rainbow','galaxy','remove'];
+const FX=[
+  ['glitter','Glitter','radial-gradient(circle,#fff 1.5px,transparent 2px) 0 0/9px 9px,radial-gradient(circle,#ffd700 1.5px,transparent 2px) 4px 5px/11px 11px,#ff8fc7',''],
+  ['twinkle','Twinkle','#ff8fc7','🌟'],
+  ['dots','Dots','radial-gradient(circle,#fff 3px,transparent 3.5px) 0 0/14px 14px,#ff8fc7',''],
+  ['stripes','Stripes','repeating-linear-gradient(35deg,#fff 0 4px,#ff8fc7 4px 10px)',''],
+  ['hearts','Hearts','#ff8fc7','🤍'],
+  ['french','Tips','radial-gradient(ellipse 80% 45% at 50% 0,#fff 97%,transparent 100%),#ff8fc7',''],
+  ['ombre','Fade','linear-gradient(#fff,#ff4f9a)',''],
+  ['chrome','Shiny','linear-gradient(135deg,#ff8fc7 20%,#fff 45%,#ff8fc7 60%,#ffe3f1 80%)',''],
+  ['gems','Gems','#ff8fc7','💎']
+];
+const STICKERS=['💖','⭐','🌈','🦄','🦋','🌸','🍓','🐱','🐶','🍭','🎀','💎','👑','🌙','☀️','🍩','🐠','🌼','🍒','⚡','🐞','🍦','🎈','❄️','🐰','🌺','🍉','👻'];
+const BRUSH=['#ffffff','#222233','#ff4f9a','#e8202a','#ff7a1a','#ffd21f','#7ad94a','#36a3ff','#7d5cff','#d4af37'];
+
+function chipStyle(c){
+  if(c==='rainbow')return 'background:linear-gradient(#ff3b3b,#ff9a1f,#ffe11f,#4fd94a,#36a3ff,#9b5cff)';
+  if(c==='galaxy')return 'background:radial-gradient(circle,#fff 1px,transparent 1.5px) 0 0/10px 10px,radial-gradient(circle at 35% 30%,#b37dff,#4a238f 45%,#120a33)';
+  return 'background:'+c;
+}
+function item(group,{html,style,label,on,wide},onTap){
+  const b=document.createElement('button');b.className='item'+(on?' on':'');b.dataset.group=group;
+  b.innerHTML=`<div class="chip${wide?' wide':''}" style="${style||''}">${html||''}</div>${label?`<div>${label}</div>`:''}`;
+  b.onclick=()=>{document.querySelectorAll(`.item[data-group="${group}"]`).forEach(x=>x.classList.remove('on'));b.classList.add('on');sfx.tick();onTap&&onTap();};
+  return b;
+}
+function section(tray,title){if(title){const h=document.createElement('h3');h.textContent=title;tray.appendChild(h);}const g=document.createElement('div');g.className='grid';tray.appendChild(g);return g;}
+function allButton(tray,label,fn){const b=document.createElement('button');b.className='btn big allbtn';b.textContent=label;b.onclick=fn;tray.appendChild(b);}
+function miniSVG(vb,build){const s=document.createElementNS(NS,'svg');s.setAttribute('viewBox',vb);build(s);return s.outerHTML;}
+
+function showTab(t){
+  sel.tab=t;$('hint').textContent=HINTS[t];
+  document.querySelectorAll('.tab').forEach(b=>b.classList.toggle('on',b.dataset.tab===t));
+  const tray=$('tray');tray.innerHTML='';tray.scrollTop=0;
+  if(t==='polish'){
+    allButton(tray,'💅 Paint all 5 nails',()=>{snap();for(let i=0;i<5;i++)paint(i,i*140);});
+    const g=section(tray,'Nail polish');
+    POLISH.forEach(c=>g.appendChild(item('polish',{style:c==='remove'?'background:#e9f7ff':chipStyle(c),html:c==='remove'?'🧴':'',label:c==='remove'?'Remove':c==='rainbow'?'Rainbow':c==='galaxy'?'Galaxy':'',on:sel.polish===c},()=>sel.polish=c)));
+  }else if(t==='effects'){
+    allButton(tray,'✨ Put on all 5 nails',()=>{snap();const on=!state.nails.every(n=>n.fx[sel.fx]);for(let i=0;i<5;i++)toggleFx(i,sel.fx,on);save();sfx.ding();});
+    const g=section(tray,'Tap again to take it off');
+    FX.forEach(([k,label,bg,em])=>g.appendChild(item('fx',{style:'background:'+bg,html:em,label,on:sel.fx===k},()=>sel.fx=k)));
+  }else if(t==='draw'){
+    const g=section(tray,'Brush color');
+    BRUSH.forEach(c=>g.appendChild(item('brush',{style:'background:'+c,on:sel.draw===c},()=>sel.draw=c)));
+    const g2=section(tray,'Brush size');
+    [[2.5,'Tiny'],[5,'Medium'],[9,'Big']].forEach(([s,l])=>g2.appendChild(item('size',{html:`<div style="width:${s*2.6}px;height:${s*2.6}px;border-radius:50%;background:#5a2a5e"></div>`,label:l,on:sel.size===s},()=>sel.size=s)));
+  }else if(t==='stickers'){
+    allButton(tray,'⭐ Sticker on all 5 nails',()=>{if(sel.sticker==='peel')return;snap();for(let i=0;i<5;i++){const d=dims(i);addSticker(i,0,d.yT+d.L*.5);}save();});
+    const g=section(tray,'');
+    g.appendChild(item('st',{html:'🧽',style:'background:#e9f7ff',label:'Peel off',on:sel.sticker==='peel'},()=>sel.sticker='peel'));
+    STICKERS.forEach(s=>g.appendChild(item('st',{html:s,on:sel.sticker===s},()=>sel.sticker=s)));
+  }else if(t==='bling'){
+    const skin=SKINS[state.skin][0];
+    const g=section(tray,'Rings — pick one, tap a finger');
+    RINGS.forEach(([k,l])=>g.appendChild(item('ring',{label:l,on:sel.ring===k,html:k==='none'?'✖️':miniSVG('-30 -30 60 60',s=>{el('line',{x1:0,y1:-40,x2:0,y2:40,stroke:skin,'stroke-width':26},s);ringG(k,26,s);})},()=>sel.ring=k)));
+    const g2=section(tray,'Bracelets — tap to wear');
+    BRACELETS.forEach(([k,l])=>g2.appendChild(item('br',{wide:true,label:l,on:(state.bracelet||'none')===k,html:k==='none'?'✖️':miniSVG('150 458 140 56',s=>{el('rect',{x:150,y:458,width:140,height:56,fill:skin},s);braceletG(k,s);})},()=>{
+      snap();state.bracelet=k==='none'?null:k;renderBracelet();save();if(state.bracelet){sfx.ding();}
+    })));
+  }else if(t==='hand'){
+    const g=section(tray,'Hand color');
+    SKINS.forEach((s,k)=>g.appendChild(item('skin',{style:`background:${s[0]};border:3px solid ${s[1]}`,on:state.skin===k},()=>{snap();state.skin=k;applySkin();save();})));
+    const g2=section(tray,'Nail shape');
+    SHAPES.forEach(([k,l])=>g2.appendChild(item('shape',{label:l,on:state.shape===k,html:miniSVG('-30 -40 60 70',s=>{el('line',{x1:0,y1:-6,x2:0,y2:60,stroke:SKINS[state.skin][0],'stroke-width':40,'stroke-linecap':'round'},s);el('path',{d:nailPath(dimsW(40),k),transform:'translate(0 -6)',fill:'#ff4f9a',stroke:'rgba(0,0,0,.2)'},s);})},()=>{
+      snap();state.shape=k;applyShape();for(let i=0;i<5;i++)renderNail(i);save();
+    })));
+    allButton(tray,'🧼 Start over',()=>{snap();const keep={skin:state.skin,shape:state.shape};state=Object.assign(blankState(),keep);renderAll();sfx.paint();});
+  }
+}
+const tabs=$('tabs');
+TABS.forEach(([k,ic,l])=>{const b=document.createElement('button');b.className='tab';b.dataset.tab=k;b.innerHTML=`<span>${ic}</span>${l}`;b.onclick=()=>{sfx.tick();showTab(k);};tabs.appendChild(b);});
+
+buildHand();renderAll();updUndo();showTab('polish');
+})();
+</script>
+</body>
+</html>
