@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Threes</title>
+<style>
+  :root {
+    --bg: #fbf9f3;
+    --board: #c9dadf;
+    --cell: #b8cbd1;
+    --blue: #66ccff;
+    --blue-dark: #4aa3d6;
+    --red: #ff6680;
+    --red-dark: #d6475f;
+    --ink: #3d3d3d;
+  }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body {
+    margin: 0; height: 100%; background: var(--bg); color: var(--ink);
+    font-family: "Trebuchet MS", "Arial Rounded MT Bold", "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden; touch-action: none; user-select: none; -webkit-user-select: none;
+  }
+  #app { height: 100%; display: flex; flex-direction: column; align-items: center; }
+
+  header {
+    width: 100%; max-width: 560px; display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 14px 4px;
+  }
+  .btn {
+    border: none; background: #e7eef0; color: #5b6f75; font: inherit; font-weight: bold;
+    font-size: 16px; padding: 10px 14px; border-radius: 12px; text-decoration: none; cursor: pointer;
+    box-shadow: 0 3px 0 #cfdadd;
+  }
+  .btn:active { transform: translateY(2px); box-shadow: 0 1px 0 #cfdadd; }
+
+  .next-wrap { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .next-label { font-size: 13px; letter-spacing: 2px; color: #8aa0a6; font-weight: bold; }
+  #next {
+    width: 34px; height: 44px; border-radius: 7px; display: flex; align-items: center; justify-content: center;
+    font-weight: bold; font-size: 22px; color: #999; transition: background .2s;
+  }
+  #next.n1 { background: var(--blue); box-shadow: 0 4px 0 var(--blue-dark); }
+  #next.n2 { background: var(--red); box-shadow: 0 4px 0 var(--red-dark); }
+  #next.n3 { background: #fff; box-shadow: 0 4px 0 #ffcc66; }
+  #next.bonus { background: #fff; box-shadow: 0 4px 0 #b28cff; color: #b28cff; }
+
+  .scorebox { text-align: center; min-width: 70px; }
+  .scorebox .lbl { font-size: 13px; letter-spacing: 2px; color: #8aa0a6; font-weight: bold; }
+  .scorebox .val { font-size: 22px; font-weight: bold; }
+
+  #hint { font-size: 15px; color: #8aa0a6; margin: 4px 0 8px; height: 20px; }
+  #hint b.one { color: var(--blue-dark); } #hint b.two { color: var(--red-dark); }
+
+  #board {
+    position: relative; background: var(--board); border-radius: 16px;
+    box-shadow: inset 0 0 0 2px #bdd0d5;
+  }
+  .slot { position: absolute; background: var(--cell); border-radius: 10px; opacity: .55; }
+
+  .tile {
+    position: absolute; left: 0; top: 0; will-change: transform;
+    transition: transform 120ms ease-out;
+  }
+  .tile.noanim { transition: none; }
+  .inner {
+    width: 100%; height: 100%; border-radius: 10px; position: relative;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-weight: bold; transition: transform 140ms ease-in;
+  }
+  .t1 .inner { background: var(--blue); color: #fff; box-shadow: 0 6px 0 var(--blue-dark); }
+  .t2 .inner { background: var(--red); color: #fff; box-shadow: 0 6px 0 var(--red-dark); }
+  .tw .inner { background: #fff; color: var(--ink); }
+  .num { line-height: 1; }
+  .t1 .num, .t2 .num { text-shadow: 0 2px 0 rgba(0,0,0,.08); }
+  .tw .num { margin-top: -18%; }
+  .face { position: absolute; left: 8%; right: 8%; bottom: 7%; height: 38%; }
+  .face svg { width: 100%; height: 100%; display: block; overflow: visible; }
+
+  .inner.pop { animation: pop 180ms ease-out; }
+  @keyframes pop { 0% { transform: scale(1); } 50% { transform: scale(1.14); } 100% { transform: scale(1); } }
+  .inner.flipping { transform: scaleX(0); }
+  .inner.back { background: #fff8e1 !important; }
+  .t1 .inner.back .num { color: var(--blue) !important; }
+  .t2 .inner.back .num { color: var(--red) !important; }
+
+  .bubble {
+    position: absolute; z-index: 20; font-weight: bold; color: #fff; background: #ff9f43;
+    padding: 4px 9px; border-radius: 14px; font-size: 16px; pointer-events: none;
+    transform: translate(-50%, 0); animation: rise 900ms ease-out forwards; white-space: nowrap;
+    box-shadow: 0 3px 0 #d97b1f;
+  }
+  @keyframes rise {
+    0% { opacity: 0; margin-top: 10px; transform: translate(-50%,0) scale(.6); }
+    25% { opacity: 1; transform: translate(-50%,0) scale(1.15); }
+    40% { transform: translate(-50%,0) scale(1); }
+    100% { opacity: 1; margin-top: -18px; transform: translate(-50%,0) scale(1); }
+  }
+
+  #overlay {
+    position: fixed; inset: 0; background: rgba(251,249,243,.88); display: none;
+    flex-direction: column; align-items: center; justify-content: center; z-index: 50; text-align: center;
+  }
+  #overlay.show { display: flex; animation: fade .4s; }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+  #overlay h1 { margin: 0 0 6px; font-size: 40px; color: #ff6680; }
+  #overlay .big { font-size: 56px; font-weight: bold; margin: 4px 0; }
+  #overlay .best { color: #8aa0a6; font-size: 18px; margin-bottom: 22px; }
+  #overlay .btn { font-size: 22px; padding: 14px 28px; background: #66ccff; color: #fff; box-shadow: 0 5px 0 #4aa3d6; }
+
+  #tally {
+    position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
+    font-size: 30px; font-weight: bold; color: #ff9f43; display: none;
+  }
+</style>
+</head>
+<body>
+<div id="app">
+  <header>
+    <a class="btn" href="../">&#8592; Home</a>
+    <div class="scorebox"><div class="lbl">SCORE</div><div class="val" id="score">0</div></div>
+    <div class="next-wrap"><div class="next-label">NEXT</div><div id="next"></div></div>
+    <button class="btn" id="restart">New</button>
+  </header>
+  <div id="hint">Swipe to slide! <b class="one">1</b> + <b class="two">2</b> = 3</div>
+  <div id="board"></div>
+</div>
+<div id="tally"></div>
+<div id="overlay">
+  <h1>Out of moves!</h1>
+  <div>Final score</div>
+  <div class="big" id="finalScore">0</div>
+  <div class="best" id="bestScore"></div>
+  <button class="btn" id="again">Play again</button>
+</div>
+
+<script>
+(function () {
+  var N = 4;
+  var boardEl = document.getElementById('board');
+  var nextEl = document.getElementById('next');
+  var scoreEl = document.getElementById('score');
+  var hintEl = document.getElementById('hint');
+  var overlay = document.getElementById('overlay');
+  var tallyEl = document.getElementById('tally');
+
+  var grid, deck, nextVal, nextIsBonus, busy, over, idSeq = 0, gameId = 0;
+  var cw, ch, gap; // cell width, height, gap
+
+  // ---------- helpers ----------
+  function level(v) { return Math.round(Math.log(v / 3) / Math.log(2)); } // 3->0, 6->1, 12->2...
+  function points(v) { return v < 3 ? 0 : Math.pow(3, level(v) + 1); }
+  function canMerge(a, b) { return (a + b === 3) || (a === b && a >= 3); }
+  function shuffle(a) { for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
+  function maxTile() { var m = 0; eachTile(function (t) { if (t.v > m) m = t.v; }); return m; }
+  function eachTile(fn) { for (var r = 0; r < N; r++) for (var c = 0; c < N; c++) if (grid[r][c]) fn(grid[r][c], r, c); }
+
+  var BORDER = ['#ffcc66', '#ff9f43', '#7ed957', '#4fc3f7', '#b28cff', '#ff7eb6', '#ffd23f', '#26c6a6', '#ff6b6b', '#5c7cfa', '#f06595', '#20c997'];
+  function borderColor(v) { return BORDER[level(v) % BORDER.length]; }
+
+  // ---------- faces ----------
+  // viewBox 0 0 100 40. Each level gets its own personality.
+  function faceSVG(v) {
+    var L = level(v), s = '';
+    var ink = '#3d3d3d';
+    var eyes = '<circle cx="38" cy="16" r="3.6" fill="' + ink + '"/><circle cx="62" cy="16" r="3.6" fill="' + ink + '"/>';
+    var smile = '<path d="M42 26 Q50 33 58 26" stroke="' + ink + '" stroke-width="3" fill="none" stroke-linecap="round"/>';
+    var bigSmile = '<path d="M40 24 Q50 37 60 24 Z" fill="' + ink + '"/><path d="M45 29 Q50 33 55 29" fill="#ff6680"/>';
+    var blush = '<ellipse cx="27" cy="23" rx="5" ry="3" fill="#ffb3c1"/><ellipse cx="73" cy="23" rx="5" ry="3" fill="#ffb3c1"/>';
+    var glasses = '<circle cx="38" cy="16" r="8" fill="none" stroke="' + ink + '" stroke-width="2.5"/><circle cx="62" cy="16" r="8" fill="none" stroke="' + ink + '" stroke-width="2.5"/><line x1="46" y1="16" x2="54" y2="16" stroke="' + ink + '" stroke-width="2.5"/>';
+    var shades = '<path d="M28 11 H48 V17 Q48 23 38 23 Q28 23 28 17 Z" fill="' + ink + '"/><path d="M52 11 H72 V17 Q72 23 62 23 Q52 23 52 17 Z" fill="' + ink + '"/><line x1="46" y1="13" x2="54" y2="13" stroke="' + ink + '" stroke-width="3"/><path d="M31 14 L36 14" stroke="#fff" stroke-width="2" stroke-linecap="round"/>';
+    var stache = '<path d="M50 25 Q42 20 34 25 Q30 29 26 26 Q30 33 40 29 Q46 27 50 28 Q54 27 60 29 Q70 33 74 26 Q70 29 66 25 Q58 20 50 25 Z" fill="#6b4226"/>';
+    var crown = '<path d="M36 6 L40 -6 L46 2 L50 -9 L54 2 L60 -6 L64 6 Z" fill="#ffd23f" stroke="#e0a800" stroke-width="1.5" stroke-linejoin="round"/><circle cx="50" cy="0" r="1.8" fill="#ff6680"/>';
+    var bow = '<path d="M50 33 L38 27 L38 39 Z M50 33 L62 27 L62 39 Z" fill="#ff6680"/><circle cx="50" cy="33" r="3" fill="#d6475f"/>';
+    var wink = '<path d="M33 16 Q38 12 43 16" stroke="' + ink + '" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="62" cy="16" r="3.6" fill="' + ink + '"/>';
+    var tongue = '<path d="M42 25 Q50 31 58 25" stroke="' + ink + '" stroke-width="3" fill="none" stroke-linecap="round"/><path d="M47 28 Q47 36 51 36 Q55 36 54 28 Z" fill="#ff6680"/>';
+    var starEyes = star(38, 15) + star(62, 15);
+    var hat = '<rect x="38" y="-12" width="24" height="16" rx="2" fill="' + ink + '"/><rect x="32" y="3" width="36" height="4" rx="2" fill="' + ink + '"/><rect x="38" y="-1" width="24" height="3" fill="#ff6680"/>';
+    var monocle = '<circle cx="38" cy="16" r="3.6" fill="' + ink + '"/><circle cx="62" cy="16" r="7.5" fill="none" stroke="#e0a800" stroke-width="2.5"/><circle cx="62" cy="16" r="3.6" fill="' + ink + '"/><path d="M69 18 Q72 28 68 36" stroke="#e0a800" stroke-width="1.5" fill="none"/>';
+
+    switch (L) {
+      case 0: s = eyes + smile; break;                          // 3: happy
+      case 1: s = eyes + blush + smile; break;                  // 6: blushing
+      case 2: s = glasses + eyes + smile; break;                // 12: glasses
+      case 3: s = eyes + stache; break;                         // 24: mustache
+      case 4: s = wink + blush + tongue; break;                 // 48: silly wink
+      case 5: s = shades + bigSmile; break;                     // 96: cool shades
+      case 6: s = crown + eyes + blush + bigSmile; break;       // 192: crown
+      case 7: s = hat + monocle + stache; break;                // 384: fancy gent
+      case 8: s = starEyes + blush + bigSmile; break;            // 768: star-struck
+      case 9: s = crown + shades + stache; break;               // 1536: cool king
+      default: s = crown + starEyes + blush + bigSmile + bow;   // 3072+: legend
+    }
+    return '<svg viewBox="0 0 100 40">' + s + '</svg>';
+
+    function star(x, y) {
+      var p = [];
+      for (var i = 0; i < 10; i++) {
+        var a = Math.PI / 5 * i - Math.PI / 2, r = i % 2 ? 2.6 : 6.2;
+        p.push((x + r * Math.cos(a)).toFixed(1) + ',' + (y + r * Math.sin(a)).toFixed(1));
+      }
+      return '<polygon points="' + p.join(' ') + '" fill="#ffd23f" stroke="#e0a800" stroke-width="1"/>';
+    }
+  }
+
+  // ---------- tile DOM ----------
+  function paintTile(t) {
+    var el = t.el, inner = t.inner;
+    el.className = 'tile ' + (t.v === 1 ? 't1' : t.v === 2 ? 't2' : 'tw') + (el.classList.contains('noanim') ? ' noanim' : '');
+    var digits = String(t.v).length;
+    var fs = cw * (t.v < 3 ? 0.55 : digits <= 2 ? 0.48 : digits === 3 ? 0.38 : 0.3);
+    var color = (t.v >= 384) ? borderColor(t.v) : (t.v >= 3 ? '#3d3d3d' : '#fff');
+    var html = '<div class="num" style="font-size:' + fs + 'px;color:' + color + '">' + t.v + '</div>';
+    if (t.v >= 3) {
+      html += '<div class="face">' + faceSVG(t.v) + '</div>';
+      inner.style.boxShadow = '0 6px 0 ' + borderColor(t.v);
+    } else {
+      inner.style.boxShadow = '';
+    }
+    inner.innerHTML = html;
+  }
+  function makeTile(v, r, c, fromR, fromC) {
+    var el = document.createElement('div');
+    var inner = document.createElement('div');
+    inner.className = 'inner';
+    el.appendChild(inner);
+    el.style.width = cw + 'px'; el.style.height = ch + 'px';
+    var t = { id: ++idSeq, v: v, el: el, inner: inner, r: r, c: c };
+    paintTile(t);
+    if (fromR !== undefined) {
+      el.classList.add('noanim');
+      place(t, fromR, fromC);
+      boardEl.appendChild(el);
+      el.offsetWidth; // reflow
+      el.classList.remove('noanim');
+      place(t, r, c);
+    } else {
+      place(t, r, c);
+      boardEl.appendChild(el);
+    }
+    return t;
+  }
+  function px(c) { return gap + c * (cw + gap); }
+  function py(r) { return gap + r * (ch + gap); }
+  function place(t, r, c) { t.el.style.transform = 'translate(' + px(c) + 'px,' + py(r) + 'px)'; }
+
+  // ---------- layout ----------
+  function layout() {
+    var availW = Math.min(window.innerWidth * 0.94, 540);
+    var availH = window.innerHeight - 120;
+    gap = Math.max(6, Math.round(Math.min(availW, availH) * 0.025));
+    var wFromW = (availW - gap * 5) / 4;
+    var wFromH = ((availH - gap * 5) / 4) / 1.32;
+    cw = Math.floor(Math.min(wFromW, wFromH));
+    ch = Math.floor(cw * 1.32);
+    boardEl.style.width = (cw * 4 + gap * 5) + 'px';
+    boardEl.style.height = (ch * 4 + gap * 5 + 6) + 'px';
+    var slots = boardEl.querySelectorAll('.slot');
+    for (var i = 0; i < slots.length; i++) {
+      var r = Math.floor(i / 4), c = i % 4;
+      slots[i].style.width = cw + 'px'; slots[i].style.height = ch + 'px';
+      slots[i].style.left = px(c) + 'px'; slots[i].style.top = py(r) + 'px';
+    }
+    if (grid) eachTile(function (t, r, c) {
+      t.el.classList.add('noanim');
+      t.el.style.width = cw + 'px'; t.el.style.height = ch + 'px';
+      paintTile(t); place(t, r, c);
+      t.el.offsetWidth; t.el.classList.remove('noanim');
+    });
+  }
+
+  // ---------- deck / next tile ----------
+  function drawFromDeck() {
+    if (!deck.length) deck = shuffle([1,1,1,1,2,2,2,2,3,3,3,3]);
+    return deck.pop();
+  }
+  function pickNext() {
+    var m = maxTile();
+    nextIsBonus = false;
+    if (m >= 48 && Math.random() < 1 / 21) {
+      var opts = [];
+      for (var v = 6; v <= m / 8; v *= 2) opts.push(v);
+      if (opts.length) { nextVal = opts[Math.floor(Math.random() * opts.length)]; nextIsBonus = true; showNext(); return; }
+    }
+    nextVal = drawFromDeck();
+    showNext();
+  }
+  function showNext() {
+    nextEl.className = nextIsBonus ? 'bonus' : (nextVal === 1 ? 'n1' : nextVal === 2 ? 'n2' : 'n3');
+    nextEl.textContent = nextIsBonus ? '+' : '';
+  }
+
+  // ---------- game flow ----------
+  function newGame() {
+    gameId++;
+    boardEl.innerHTML = '';
+    for (var i = 0; i < 16; i++) { var s = document.createElement('div'); s.className = 'slot'; boardEl.appendChild(s); }
+    grid = [];
+    for (var r = 0; r < N; r++) grid.push([null, null, null, null]);
+    deck = [];
+    busy = false; over = false;
+    overlay.classList.remove('show');
+    tallyEl.style.display = 'none';
+    layout();
+    var cells = [];
+    for (var k = 0; k < 16; k++) cells.push(k);
+    shuffle(cells);
+    for (var j = 0; j < 9; j++) {
+      var rr = Math.floor(cells[j] / 4), cc = cells[j] % 4;
+      grid[rr][cc] = makeTile(drawFromDeck(), rr, cc);
+    }
+    pickNext();
+    updateScore();
+  }
+
+  function updateScore() {
+    var s = 0; eachTile(function (t) { s += points(t.v); });
+    scoreEl.textContent = s;
+    return s;
+  }
+
+  // line coordinates ordered from the leading edge
+  function lineCells(dir, i) {
+    var out = [];
+    for (var k = 0; k < N; k++) {
+      if (dir === 'left') out.push([i, k]);
+      else if (dir === 'right') out.push([i, N - 1 - k]);
+      else if (dir === 'up') out.push([k, i]);
+      else out.push([N - 1 - k, i]);
+    }
+    return out;
+  }
+  function get(p) { return grid[p[0]][p[1]]; }
+  function set(p, t) { grid[p[0]][p[1]] = t; }
+
+  function move(dir) {
+    if (busy || over) return;
+    var movedLines = [];
+    var merges = [];
+    for (var i = 0; i < N; i++) {
+      var line = lineCells(dir, i);
+      for (var k = 1; k < N; k++) {
+        var a = get(line[k - 1]), b = get(line[k]);
+        if (!b) continue;
+        if (!a) { shiftFrom(line, k); movedLines.push(line); break; }
+        if (canMerge(a.v, b.v)) {
+          // b slides onto a; a disappears; b gets new value
+          set(line[k - 1], b); set(line[k], null);
+          b.r = line[k - 1][0]; b.c = line[k - 1][1];
+          b.el.style.zIndex = 2; a.el.style.zIndex = 1;
+          place(b, b.r, b.c);
+          merges.push({ keep: b, gone: a, v: a.v + b.v });
+          shiftFrom(line, k + 1);
+          movedLines.push(line);
+          break;
+        }
+      }
+    }
+    if (!movedLines.length) return;
+    busy = true;
+    hintEl.style.visibility = 'hidden';
+
+    // spawn new tile at trailing edge of a random moved line
+    var ln = movedLines[Math.floor(Math.random() * movedLines.length)];
+    var end = ln[N - 1];
+    var dr = { left: [0, 1], right: [0, -1], up: [1, 0], down: [-1, 0] }[dir];
+    set(end, makeTile(nextVal, end[0], end[1], end[0] + dr[0], end[1] + dr[1]));
+
+    setTimeout(function () {
+      merges.forEach(function (m) {
+        if (m.gone.el.parentNode) m.gone.el.parentNode.removeChild(m.gone.el);
+        m.keep.v = m.v; m.keep.el.style.zIndex = '';
+        paintTile(m.keep);
+        m.keep.inner.classList.remove('pop'); m.keep.inner.offsetWidth; m.keep.inner.classList.add('pop');
+      });
+      updateScore();
+      pickNext();
+      busy = false;
+      if (!anyMoves()) endGame();
+    }, 130);
+  }
+  function shiftFrom(line, k) {
+    for (var j = k; j < N; j++) {
+      var t = get(line[j]);
+      if (!t) continue;
+      set(line[j - 1], t); set(line[j], null);
+      t.r = line[j - 1][0]; t.c = line[j - 1][1];
+      place(t, t.r, t.c);
+    }
+  }
+  function anyMoves() {
+    for (var r = 0; r < N; r++) for (var c = 0; c < N; c++) {
+      var t = grid[r][c];
+      if (!t) return true;
+      if (c < N - 1 && grid[r][c + 1] && canMerge(t.v, grid[r][c + 1].v)) return true;
+      if (r < N - 1 && grid[r + 1][c] && canMerge(t.v, grid[r + 1][c].v)) return true;
+    }
+    return false;
+  }
+
+  // ---------- end-of-game tally ----------
+  function endGame() {
+    over = true; busy = true;
+    var tiles = [];
+    eachTile(function (t, r, c) { tiles.push({ t: t, r: r, c: c }); });
+    var total = 0, i = 0, myGame = gameId;
+    tallyEl.textContent = '0'; tallyEl.style.display = 'block';
+    setTimeout(step, 600);
+    function step() {
+      if (myGame !== gameId) return;
+      if (i >= tiles.length) { setTimeout(finish, 900); return; }
+      var o = tiles[i++], t = o.t, pts = points(t.v);
+      t.inner.classList.add('flipping');
+      setTimeout(function () {
+        t.inner.classList.add('back');
+        t.inner.classList.remove('flipping');
+        if (pts > 0) {
+          var b = document.createElement('div');
+          b.className = 'bubble';
+          b.textContent = '+' + pts;
+          b.style.left = (px(o.c) + cw / 2) + 'px';
+          b.style.top = (py(o.r) - 8) + 'px';
+          b.style.fontSize = Math.max(13, cw * 0.2) + 'px';
+          boardEl.appendChild(b);
+          total += pts;
+          tallyEl.textContent = total;
+        }
+      }, 140);
+      setTimeout(step, pts > 0 ? 260 : 120);
+    }
+    function finish() {
+      if (myGame !== gameId) return;
+      var best = 0;
+      try { best = parseInt(localStorage.getItem('threesBest') || '0', 10) || 0; } catch (e) {}
+      var isNew = total > best;
+      if (isNew) { best = total; try { localStorage.setItem('threesBest', String(best)); } catch (e) {} }
+      document.getElementById('finalScore').textContent = total;
+      document.getElementById('bestScore').textContent = isNew ? '★ New best score! ★' : 'Best: ' + best;
+      overlay.classList.add('show');
+    }
+  }
+
+  // ---------- input ----------
+  var sx = null, sy = null;
+  function start(x, y) { sx = x; sy = y; }
+  function end(x, y) {
+    if (sx === null) return;
+    var dx = x - sx, dy = y - sy; sx = null;
+    var ax = Math.abs(dx), ay = Math.abs(dy);
+    if (Math.max(ax, ay) < 25) return;
+    if (ax > ay) move(dx > 0 ? 'right' : 'left'); else move(dy > 0 ? 'down' : 'up');
+  }
+  document.addEventListener('touchstart', function (e) {
+    if (e.target.closest && e.target.closest('.btn')) return;
+    var t = e.changedTouches[0]; start(t.clientX, t.clientY);
+  }, { passive: true });
+  document.addEventListener('touchmove', function (e) { if (sx !== null) e.preventDefault(); }, { passive: false });
+  document.addEventListener('touchend', function (e) { var t = e.changedTouches[0]; end(t.clientX, t.clientY); });
+  document.addEventListener('mousedown', function (e) { if (e.target.closest && e.target.closest('.btn')) return; start(e.clientX, e.clientY); });
+  document.addEventListener('mouseup', function (e) { end(e.clientX, e.clientY); });
+  document.addEventListener('keydown', function (e) {
+    var map = { ArrowLeft: 'left', ArrowRight: 'right', ArrowUp: 'up', ArrowDown: 'down', a: 'left', d: 'right', w: 'up', s: 'down' };
+    if (map[e.key]) { e.preventDefault(); move(map[e.key]); }
+  });
+
+  document.getElementById('restart').addEventListener('click', newGame);
+  document.getElementById('again').addEventListener('click', newGame);
+  window.addEventListener('resize', function () { if (!over) layout(); });
+
+  newGame();
+})();
+</script>
+</body>
+</html>
