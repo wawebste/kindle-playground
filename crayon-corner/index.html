@@ -876,6 +876,184 @@ more("Magic",[
    L(()=>{x.moveTo(330,300);x.lineTo(370,350);x.lineTo(345,390);x.lineTo(390,430);});sparkle(130,200,30);sparkle(680,260,26);}]
 ]);
 
+/* ===== Christmas ===== */
+// an outlined "tube" (candy canes, scarves, garlands): a thick white line with a black edge
+function tube(pathFn,w){x.save();x.lineCap="round";x.lineJoin="round";const lw=x.lineWidth;
+  x.beginPath();pathFn();x.lineWidth=w+lw*2;x.strokeStyle="#111";x.stroke();x.lineWidth=w;x.strokeStyle="#fff";x.stroke();x.restore();}
+function snowflake(cx,cy,r){L(()=>{for(let i=0;i<6;i++){const a=i*P/3,ex=cx+Math.cos(a)*r,ey=cy+Math.sin(a)*r;x.moveTo(cx,cy);x.lineTo(ex,ey);
+  const mx=cx+Math.cos(a)*r*.6,my=cy+Math.sin(a)*r*.6;for(const d of[-.6,.6]){x.moveTo(mx,my);x.lineTo(mx+Math.cos(a+d)*r*.3,my+Math.sin(a+d)*r*.3);}}});}
+function snowflakes(list){list.forEach(f=>snowflake(f[0],f[1],f[2]));}
+function cane(cx,cy,s,rot){T(cx,cy,s,()=>{
+  tube(()=>{x.moveTo(0,220);x.lineTo(0,0);x.arc(45,0,45,P,0);x.lineTo(90,30);},40);
+  L(()=>{for(let y=24;y<210;y+=34){x.moveTo(-20,y+9);x.lineTo(20,y-9);}
+    for(let a=P+.35;a<P*2-.1;a+=.55){x.moveTo(45+Math.cos(a)*25,Math.sin(a)*25);x.lineTo(45+Math.cos(a+.2)*65,Math.sin(a+.2)*65);}});},rot||0);}
+function gift(cx,by,w,h,o){o=o||{};const lid=Math.min(36,h*.22);
+  S(()=>{x.rect(cx-w/2,by-h,w,h);});
+  if(o.dots)clip(()=>{x.rect(cx-w/2,by-h,w,h);},()=>{for(let gx=cx-w/2+20;gx<cx+w/2;gx+=44)for(let gy=by-h+lid+20;gy<by;gy+=40)S(()=>C(gx+((gy/40|0)%2)*20,gy,7));});
+  if(o.stripes)clip(()=>{x.rect(cx-w/2,by-h+lid,w,h-lid);},()=>L(()=>{for(let k=-h;k<w;k+=36){x.moveTo(cx-w/2+k,by);x.lineTo(cx-w/2+k+h,by-h);}}));
+  S(()=>{x.rect(cx-w/2-10,by-h-6,w+20,lid);});
+  S(()=>{x.rect(cx-14,by-h-6,28,h+6);});
+  S(()=>{x.moveTo(cx,by-h-6);x.bezierCurveTo(cx-70,by-h-60,cx-60,by-h+10,cx,by-h-6);x.closePath();});
+  S(()=>{x.moveTo(cx,by-h-6);x.bezierCurveTo(cx+70,by-h-60,cx+60,by-h+10,cx,by-h-6);x.closePath();});
+  S(()=>C(cx,by-h-8,12));
+}
+function xmasTree(cx,by,s,o){o=o||{};T(cx,by,s,()=>{
+  S(()=>RR(-30,-70,60,70,6));
+  [[-230,-70,0,-260],[-190,-220,0,-400],[-150,-360,0,-530]].forEach(([a,b,c,d])=>S(()=>{x.moveTo(a,b);x.quadraticCurveTo(0,b+30,-a,b);x.lineTo(c,d);x.closePath();}));
+  if(o.garland!==false)[[-205,-130,205,-170],[-165,-280,165,-320],[-120,-420,120,-450]].forEach(([a,b,c,d])=>tube(()=>{x.moveTo(a,b);x.quadraticCurveTo(0,(b+d)/2+40,c,d);},14));
+  if(o.balls!==false)[[-120,-110],[60,-95],[150,-120],[-60,-250],[90,-240],[-110,-370],[40,-380],[0,-470],[-160,-150],[0,-180]].forEach(([a,b])=>S(()=>C(a,b,17)));
+  S(()=>star(0,-545,52));
+});}
+function santaHead(o){o=o||{};
+  S(()=>{x.moveTo(-100,-60);x.quadraticCurveTo(-70,-200,50,-215);x.quadraticCurveTo(140,-215,165,-115);x.lineTo(120,-100);x.quadraticCurveTo(100,-150,60,-160);x.lineTo(100,-60);x.closePath();});
+  S(()=>C(165,-105,26));
+  S(()=>E(0,10,88,92));
+  S(()=>{x.moveTo(-92,10);x.bezierCurveTo(-120,140,-50,205,0,205);x.bezierCurveTo(50,205,120,140,92,10);x.quadraticCurveTo(60,75,0,75);x.quadraticCurveTo(-60,75,-92,10);x.closePath();});
+  L(()=>{x.moveTo(-60,110);x.quadraticCurveTo(-50,140,-30,150);x.moveTo(60,110);x.quadraticCurveTo(50,140,30,150);x.moveTo(0,120);x.quadraticCurveTo(-6,150,0,175);});
+  M(()=>S(()=>{x.moveTo(0,50);x.quadraticCurveTo(-35,25,-78,52);x.quadraticCurveTo(-40,78,0,60);x.closePath();}));
+  S(()=>{x.moveTo(-22,78);x.quadraticCurveTo(0,100,22,78);x.closePath();});
+  S(()=>C(0,38,17));
+  M(()=>{if(o.wink)L(()=>x.arc(-34,-8,12,P*1.1,P*1.9));else{S(()=>C(-34,-8,11));D(()=>C(-33,-6,6));}
+    L(()=>{x.moveTo(-52,-34);x.quadraticCurveTo(-34,-46,-16,-34);});S(()=>C(-58,30,13));});
+  S(()=>RR(-112,-90,224,44,22));
+}
+function santaBody(o){o=o||{};
+  M(()=>{S(()=>RR(-82,110,62,80,10));S(()=>{x.moveTo(-100,180);x.lineTo(-18,180);x.lineTo(-18,232);x.lineTo(-125,232);x.quadraticCurveTo(-132,195,-100,180);x.closePath();});});
+  M(()=>{S(()=>{x.moveTo(-105,-70);x.quadraticCurveTo(-205,-10,-190,70);x.lineTo(-148,74);x.quadraticCurveTo(-155,20,-100,-15);x.closePath();});S(()=>RR(-198,58,60,24,10));S(()=>C(-168,100,28));});
+  const body=()=>{x.moveTo(-105,-100);x.bezierCurveTo(-180,30,-160,140,-115,140);x.lineTo(115,140);x.bezierCurveTo(160,140,180,30,105,-100);x.quadraticCurveTo(0,-130,-105,-100);x.closePath();};
+  S(body);
+  clip(body,()=>{S(()=>{x.rect(-200,22,400,38);});S(()=>RR(-22,-130,44,300,10));});
+  S(()=>RR(-140,118,280,40,18));
+  S(()=>RR(-30,16,60,50,8));S(()=>RR(-15,30,30,22,4));
+  [-60,-20].forEach(y=>S(()=>C(0,y,8)));
+  T(0,-185,.85,()=>santaHead(o));
+}
+function mrsClausHead(){
+  S(()=>C(0,-112,42));[[-30,-150],[30,-150]].forEach(([a,b],i)=>T(a,b,1,()=>S(()=>{x.moveTo(0,0);x.quadraticCurveTo(28,-22,56,0);x.quadraticCurveTo(28,22,0,0);x.closePath();}),i?-.5:P+.5));
+  S(()=>{C(-8,-150,9);});S(()=>C(10,-154,9));
+  S(()=>E(0,-10,104,100));
+  S(()=>E(0,18,82,84));
+  S(()=>{x.moveTo(-86,10);x.quadraticCurveTo(-82,-80,0,-78);x.quadraticCurveTo(82,-80,86,10);x.quadraticCurveTo(45,-30,0,-35);x.quadraticCurveTo(-45,-30,-86,10);x.closePath();});
+  M(()=>{S(()=>C(-32,18,23));D(()=>C(-32,20,6));S(()=>C(-58,55,12));});L(()=>{x.moveTo(-9,18);x.quadraticCurveTo(0,10,9,18);});
+  L(()=>{x.moveTo(-6,42);x.quadraticCurveTo(0,52,6,42);x.moveTo(-26,68);x.quadraticCurveTo(0,90,26,68);});
+}
+function mrsClausBody(){
+  M(()=>S(()=>{x.moveTo(-60,210);x.lineTo(-10,210);x.lineTo(-10,240);x.lineTo(-80,240);x.quadraticCurveTo(-85,215,-60,210);x.closePath();}));
+  const dress=()=>{x.moveTo(-70,-90);x.quadraticCurveTo(-110,60,-170,215);x.quadraticCurveTo(0,240,170,215);x.quadraticCurveTo(110,60,70,-90);x.quadraticCurveTo(0,-110,-70,-90);x.closePath();};
+  S(dress);
+  clip(dress,()=>S(()=>{x.moveTo(-180,190);x.quadraticCurveTo(0,215,180,190);x.lineTo(180,260);x.lineTo(-180,260);x.closePath();}));
+  S(()=>{x.moveTo(-60,10);x.lineTo(60,10);x.quadraticCurveTo(90,120,80,180);x.quadraticCurveTo(0,195,-80,180);x.quadraticCurveTo(-90,120,-60,10);x.closePath();});
+  S(()=>RR(-35,60,70,45,10));L(()=>{for(let k=0;k<7;k++){const a=-80+k*27;x.moveTo(a,180+(k%2)*6);x.quadraticCurveTo(a+13,195,a+27,180+((k+1)%2)*6);}});
+  S(()=>{x.moveTo(-70,-90);x.quadraticCurveTo(0,-40,70,-90);x.quadraticCurveTo(0,-60,-70,-90);x.closePath();});
+  M(()=>{S(()=>{x.moveTo(-68,-70);x.quadraticCurveTo(-130,-20,-120,40);x.lineTo(-85,45);x.quadraticCurveTo(-90,0,-55,-30);x.closePath();});S(()=>C(-102,58,22));});
+  T(0,-185,.85,()=>mrsClausHead());
+}
+function elfHead(){
+  M(()=>S(()=>poly([-70,-5,-150,-60,-75,40])));
+  S(()=>E(0,0,80,82));
+  S(()=>{x.moveTo(-90,-40);x.quadraticCurveTo(-40,-200,60,-230);x.quadraticCurveTo(140,-250,175,-180);x.quadraticCurveTo(110,-200,80,-130);x.lineTo(90,-40);x.closePath();});
+  S(()=>C(180,-172,22));
+  S(()=>RR(-100,-62,200,36,14));L(()=>{for(let k=0;k<5;k++){x.moveTo(-80+k*40,-62);x.lineTo(-60+k*40,-26);}});
+  M(()=>{S(()=>C(-30,5,12));D(()=>C(-29,7,6));S(()=>C(-48,38,10));});
+  D(()=>{C(-48,45,2.5);C(-40,40,2.5);C(48,45,2.5);C(40,40,2.5);});
+  L(()=>{x.moveTo(-5,25);x.quadraticCurveTo(0,32,5,25);x.moveTo(-28,48);x.quadraticCurveTo(0,72,28,48);});
+}
+function elfBody(o){o=o||{};
+  M(()=>{const leg=()=>{x.rect(-62,90,40,100);};S(leg);clip(leg,()=>L(()=>{for(let y=105;y<190;y+=24){x.moveTo(-70,y);x.lineTo(-15,y-8);}}));
+    S(()=>{x.moveTo(-70,185);x.lineTo(-15,185);x.lineTo(-15,215);x.lineTo(-90,215);x.quadraticCurveTo(-130,215,-125,175);x.quadraticCurveTo(-112,195,-95,190);x.closePath();});});
+  M(()=>{S(()=>{x.moveTo(-60,-60);x.quadraticCurveTo(-130,-20,-120,50);x.lineTo(-88,52);x.quadraticCurveTo(-92,0,-50,-30);x.closePath();});S(()=>C(-104,66,20));});
+  S(()=>{x.moveTo(-60,-75);x.lineTo(60,-75);x.lineTo(95,100);for(let k=0;k<6;k++)x.lineTo(95-k*38-19,k%2?100:125),x.lineTo(95-(k+1)*38,100);x.closePath();});
+  S(()=>{x.rect(-82,30,164,26);});S(()=>RR(-16,24,32,38,6));
+  S(()=>{x.moveTo(-60,-75);for(let k=0;k<6;k++){x.lineTo(-60+k*20+10,-50);x.lineTo(-60+(k+1)*20,-75);}x.closePath();});
+  if(o.gift)gift(0,60,110,90,{});
+  T(0,-150,.8,()=>elfHead());
+}
+function antler(){S(()=>RR(-12,-170,24,170,12));T(0,-70,1,()=>S(()=>RR(-11,-80,22,80,11)),-.9);T(0,-120,1,()=>S(()=>RR(-10,-70,20,70,10)),-.8);T(0,-160,1,()=>S(()=>RR(-10,-55,20,55,10)),.6);}
+function reindeerHead(){
+  M(()=>T(-40,-60,1,antler,-.35));
+  M(()=>S(()=>E(-88,-15,44,20,-.4)));
+  S(()=>E(0,0,72,85));
+  S(()=>E(0,58,52,40));
+  D(()=>E(0,40,20,14));
+  M(()=>{S(()=>C(-30,-15,12));D(()=>C(-29,-13,6));});
+  L(()=>{x.moveTo(-18,78);x.quadraticCurveTo(0,92,18,78);});
+}
+function reindeerBody(o){o=o||{};
+  S(()=>{x.moveTo(-160,-50);x.quadraticCurveTo(-205,-75,-195,-30);x.quadraticCurveTo(-185,-5,-160,-15);x.closePath();});
+  S(()=>RR(-120,0,40,140,14));S(()=>RR(85,0,40,140,14));
+  S(()=>{x.moveTo(110,-40);x.lineTo(140,-160);x.lineTo(205,-140);x.lineTo(185,-10);x.closePath();});
+  S(()=>E(0,-10,175,82));
+  S(()=>RR(-150,20,42,135,14));S(()=>RR(105,20,42,135,14));
+  [[-152,145],[103,145]].forEach(([a,b])=>S(()=>RR(a,b,46,20,6)));
+  if(o.collar){tube(()=>{x.moveTo(138,-80);x.quadraticCurveTo(165,-55,200,-85);},16);[[148,-64],[170,-58],[192,-70]].forEach(([a,b])=>S(()=>C(a,b,9)));}
+  T(175,-200,.95,()=>reindeerHead());
+}
+function sleigh(o){o=o||{};
+  L(()=>{x.moveTo(-230,120);x.lineTo(150,120);x.quadraticCurveTo(230,120,240,60);x.quadraticCurveTo(245,30,220,30);});
+  L(()=>{x.moveTo(-160,80);x.lineTo(-160,120);x.moveTo(80,80);x.lineTo(80,120);});
+  if(o.sack){S(()=>{x.moveTo(-200,-20);x.quadraticCurveTo(-250,-150,-150,-180);x.quadraticCurveTo(-140,-200,-120,-180);x.quadraticCurveTo(-60,-150,-80,-20);x.closePath();});gift(-20,-20,90,70,{dots:true});}
+  if(o.santa)T(80,-90,.55,()=>santaHead());
+  S(()=>{x.moveTo(-240,-40);x.quadraticCurveTo(-260,80,-180,90);x.lineTo(130,90);x.quadraticCurveTo(200,90,210,0);x.quadraticCurveTo(215,-40,180,-40);x.quadraticCurveTo(160,20,100,20);x.lineTo(-130,20);x.quadraticCurveTo(-180,20,-190,-40);x.closePath();});
+  L(()=>{x.moveTo(-200,55);x.quadraticCurveTo(-30,70,150,55);});
+}
+function snowman(o){o=o||{};
+  S(()=>C(0,60,140));S(()=>C(0,-120,105));
+  M(()=>L(()=>{x.moveTo(-90,-130);x.lineTo(-200,-200);x.moveTo(-160,-175);x.lineTo(-180,-225);x.moveTo(-160,-175);x.lineTo(-215,-170);}));
+  [[-150],[-110],[-70]].forEach(([y])=>D(()=>C(0,y+40,10)));[0,50].forEach(y=>D(()=>C(0,y+20,12)));
+  S(()=>C(0,-255,85));
+  tube(()=>{x.moveTo(-75,-195);x.quadraticCurveTo(0,-165,75,-195);},28);tube(()=>{x.moveTo(45,-185);x.lineTo(70,-100);},26);
+  M(()=>D(()=>C(-28,-275,9)));S(()=>poly([0,-260,0,-240,70,-250]));
+  [-30,-15,0,15,30].forEach((dx,i)=>D(()=>C(dx,-222+Math.abs(dx)*-.25+(i===2?4:0),4)));
+  if(o.hat!==false){S(()=>RR(-80,-338,160,22,8));S(()=>RR(-55,-430,110,98,8));S(()=>{x.rect(-55,-360,110,20);});}
+}
+function stocking(cx,ty,s,o){o=o||{};T(cx,ty,s,()=>{
+  S(()=>{x.moveTo(-55,30);x.lineTo(55,30);x.lineTo(55,170);x.quadraticCurveTo(60,230,10,240);x.lineTo(-90,240);x.quadraticCurveTo(-140,235,-130,195);x.quadraticCurveTo(-120,160,-55,160);x.closePath();});
+  S(()=>{x.moveTo(-100,240);x.quadraticCurveTo(-140,235,-130,195);x.quadraticCurveTo(-125,175,-100,168);x.quadraticCurveTo(-70,200,-100,240);x.closePath();});
+  if(o.star)S(()=>star(0,110,30));if(o.heart)S(()=>heart(0,105,28));if(o.tree)S(()=>poly([0,70,35,140,-35,140]));
+  S(()=>RR(-70,0,140,44,16));
+});}
+function wreath(cx,cy,r){
+  S(()=>C(cx,cy,r+45));S(()=>C(cx,cy,r-45));
+  for(let i=0;i<18;i++){const a=i*2*P/18;[-22,22].forEach((off,k)=>T(cx+Math.cos(a)*(r+off),cy+Math.sin(a)*(r+off),1,()=>S(()=>{x.moveTo(-34,0);x.quadraticCurveTo(0,-26,34,0);x.quadraticCurveTo(0,26,-34,0);x.closePath();}),a+P/2+(k?.6:-.6)));}
+  [[-.4,1],[.9,1],[2.1,1],[3.4,1],[4.6,1],[5.6,1]].forEach(([a])=>{[0,1,2].forEach(k=>S(()=>C(cx+Math.cos(a)*(r+(k-1)*14)+k*6,cy+Math.sin(a)*(r+(k-1)*14),10)));});
+}
+function ornament(cx,cy,r,kind){S(()=>RR(cx-14,cy-r-18,28,22,4));L(()=>{x.moveTo(cx,cy-r-18);x.lineTo(cx,cy-r-60);});S(()=>C(cx,cy,r));
+  clip(()=>C(cx,cy,r-4),()=>{if(kind==="zig")L(()=>{x.moveTo(cx-r,cy);for(let k=0;k<=8;k++)x.lineTo(cx-r+k*r/4,cy+(k%2?-16:16));});
+    if(kind==="band"){S(()=>{x.rect(cx-r,cy-18,r*2,36);});}
+    if(kind==="dots")[[-.4,-.4],[.4,-.3],[0,.1],[-.4,.45],[.4,.45]].forEach(([a,b])=>S(()=>C(cx+a*r,cy+b*r,r*.14)));
+    if(kind==="star")S(()=>star(cx,cy+4,r*.55));});}
+function gingerMan(cx,by,s){T(cx,by,s,()=>{
+  S(()=>{x.moveTo(-40,-140);x.lineTo(40,-140);x.quadraticCurveTo(110,-150,110,-115);x.quadraticCurveTo(110,-90,50,-90);x.lineTo(60,-20);x.lineTo(80,0);x.quadraticCurveTo(95,30,60,30);x.lineTo(25,10);x.lineTo(0,-20);x.lineTo(-25,10);x.lineTo(-60,30);x.quadraticCurveTo(-95,30,-80,0);x.lineTo(-60,-20);x.lineTo(-50,-90);x.quadraticCurveTo(-110,-90,-110,-115);x.quadraticCurveTo(-110,-150,-40,-140);x.closePath();});
+  S(()=>C(0,-185,55));M(()=>D(()=>C(-18,-195,7)));L(()=>{x.arc(0,-185,24,P*.2,P*.8);});[-110,-75,-40].forEach(y=>S(()=>C(0,y,8)));
+  L(()=>{x.moveTo(-95,-128);x.quadraticCurveTo(-88,-118,-95,-105);x.moveTo(95,-128);x.quadraticCurveTo(88,-118,95,-105);});
+});}
+
+cat("Christmas",[
+ ["Santa",()=>{ground(740);T(380,520,1.05,()=>santaBody());gift(640,740,110,90,{dots:true});gift(130,740,90,120,{stripes:true});snowflakes([[110,140,30],[690,130,26],[600,330,20]]);}],
+ ["Santa face",()=>{T(370,440,1.6,()=>santaHead({wink:true}));snowflakes([[110,120,34],[690,620,30],[120,660,24]]);}],
+ ["Mrs. Claus",()=>{ground(750);T(330,520,1.05,()=>mrsClausBody());
+   S(()=>E(545,570,120,26));[[500,550],[545,542],[590,550]].forEach(([a,b])=>gingerMan(a,b+12,.22));S(()=>RR(415,570,260,12,6));snowflakes([[120,120,28],[680,140,30]]);}],
+ ["Reindeer",()=>{ground(720);T(370,500,.95,()=>reindeerBody({collar:true}));snowflakes([[680,140,30],[700,560,26],[160,560,20]]);S(()=>C(120,120,45));}],
+ ["Elf",()=>{ground(750);T(380,520,1.2,()=>elfBody({gift:true}));cane(640,520,.9,.15);snowflakes([[120,140,28],[680,150,24]]);}],
+ ["Presents",()=>{L(()=>{x.moveTo(0,700);x.lineTo(800,700);});gift(220,700,240,200,{stripes:true});gift(520,700,220,260,{dots:true});gift(380,700,140,110,{});gift(680,700,120,140,{});gift(110,700,110,80,{dots:true});snowflakes([[140,140,30],[660,140,34],[400,120,22]]);}],
+ ["Christmas tree",()=>{L(()=>{x.moveTo(0,730);x.lineTo(800,730);});xmasTree(400,690,1.15);gift(170,740,150,110,{dots:true});gift(630,740,150,120,{stripes:true});}],
+ ["Santa's sleigh",()=>{S(()=>C(620,170,90));L(()=>{x.moveTo(0,740);x.lineTo(800,740);});
+   [[80,740,170,120],[290,740,200,160],[530,740,170,120]].forEach(([a,b,w,h])=>{S(()=>{x.rect(a,b-h,w,h);});S(()=>poly([a-20,b-h,a+w/2,b-h-80,a+w+20,b-h]));S(()=>RR(a+w/2-25,b-h+30,50,50,6));});T(390,360,.95,()=>sleigh({sack:true,santa:true}),-.08);snowflakes([[120,130,26],[300,110,20],[720,350,22]]);}],
+ ["Stockings",()=>{S(()=>{x.rect(80,280,640,520);});S(()=>RR(50,240,700,50,8));S(()=>{x.moveTo(230,800);x.lineTo(230,560);x.quadraticCurveTo(400,430,570,560);x.lineTo(570,800);x.closePath();});
+   [[330,800,60],[400,790,80],[470,800,60]].forEach(([a,b,h])=>S(()=>{x.moveTo(a-40,b);x.quadraticCurveTo(a-30,b-h,a,b-h*1.3);x.quadraticCurveTo(a+30,b-h,a+40,b);x.closePath();}));
+   L(()=>{for(let y=330;y<800;y+=50){x.moveTo(80,y);x.lineTo(230,y);x.moveTo(570,y);x.lineTo(720,y);}});
+   stocking(190,255,.9,{star:true});stocking(400,255,.9,{heart:true});stocking(610,255,.9,{tree:true});[[150,190],[650,190]].forEach(([a,b])=>S(()=>{x.rect(a-30,b-70,60,70);}));}],
+ ["Snowman",()=>{L(()=>{x.moveTo(0,700);x.quadraticCurveTo(400,650,800,700);});T(400,540,1,()=>snowman());snowflakes([[120,140,30],[680,150,28],[130,450,22],[690,430,24]]);pine(110,720,.6);pine(700,720,.7);}],
+ ["Gingerbread house",()=>{ground(740);S(()=>{x.rect(190,400,420,340);});S(()=>poly([150,420,400,190,650,420]));
+   L(()=>{x.moveTo(150,420);for(let k=0;k<10;k++){x.quadraticCurveTo(175+k*50,445,200+k*50,420);}});[[260,330],[400,260],[540,330]].forEach(([a,b])=>S(()=>C(a,b,20)));
+   S(()=>{x.moveTo(340,740);x.lineTo(340,600);x.arc(400,600,60,P,0);x.lineTo(460,740);x.closePath();});S(()=>C(440,670,8));
+   [[230,460],[490,460]].forEach(([a,b])=>{S(()=>RR(a,b,80,80,8));L(()=>{x.moveTo(a+40,b);x.lineTo(a+40,b+80);x.moveTo(a,b+40);x.lineTo(a+80,b+40);});});
+   [[220,580],[290,620],[520,580],[580,640],[230,690],[560,700]].forEach(([a,b])=>S(()=>C(a,b,14)));cane(110,520,.9,0);cane(690,520,.9,0);gingerMan(700,740,.5);}],
+ ["Wreath & ornaments",()=>{wreath(400,330,190);S(()=>{x.moveTo(400,520);x.bezierCurveTo(300,450,280,600,400,540);x.closePath();});S(()=>{x.moveTo(400,520);x.bezierCurveTo(500,450,520,600,400,540);x.closePath();});
+   tube(()=>{x.moveTo(390,540);x.quadraticCurveTo(360,600,340,650);},22);tube(()=>{x.moveTo(410,540);x.quadraticCurveTo(440,600,460,650);},22);S(()=>C(400,530,20));
+   ornament(130,600,60,"zig");ornament(670,600,60,"dots");ornament(130,230,46,"band");ornament(670,230,46,"star");cane(250,690,.4,.5);cane(520,690,.4,-.3);}]
+]);
+
 function render(name,idx,canvas){
   x=canvas.getContext("2d");canvas.width=canvas.height=800;
   x.fillStyle="#fff";x.fillRect(0,0,800,800);x.lineWidth=8;x.lineCap="round";x.lineJoin="round";x.strokeStyle="#111";
