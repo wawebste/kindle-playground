@@ -78,6 +78,30 @@
  ],
  "videos": [
   {
+   "id": "gWb2HshluCw",
+   "title": "1 HOUR 🎊 | Bluey Games at Nana's ☺️ 💙 | Charades + MORE 🩰 | Bluey",
+   "published": "2026-11-25T16:00:06+00:00",
+   "channel": "UCVzLLZkDuFGAE2BGdBuBNBg"
+  },
+  {
+   "id": "6NwgqIjVz-E",
+   "title": "Peppa Pig & Suzy Meet Bobby Beaver! 🦫 Magical Forest Holiday | BRAND NEW Stories | 4 Hours",
+   "published": "2026-11-25T14:15:31+00:00",
+   "channel": "UCAOtE1V7Ots4DjM8JLlrYgg"
+  },
+  {
+   "id": "UpLkclANsa0",
+   "title": "A Massive Crack Is Spreading Across the West - America’s Food Supply at Risk",
+   "published": "2026-11-25T13:00:18+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "Qv3KKqjYO3o",
+   "title": "Scientists Found a SECRET Tunnel Beneath a Prehistoric Megawall in Indonesia",
+   "published": "2026-11-25T12:00:10+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
    "id": "d6yQgRfDE2U",
    "title": "Is Jupiter NOT a Planet After All?",
    "published": "2026-11-25T00:00:19+00:00",
@@ -303,18 +327,6 @@
    "id": "Ny196TnhlZM",
    "title": "The Forbidden Place in Arizona That Nobody Can Visit",
    "published": "2026-11-19T14:00:39+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
-   "id": "IUs1epYptIo",
-   "title": "A New Ocean Is Dividing Africa in Two",
-   "published": "2026-11-19T00:00:33+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
-   "id": "eTQClPlMGTk",
-   "title": "Scientists Found the Mummy of a Pharaoh Who Looked Like an Alien",
-   "published": "2026-11-18T23:00:07+00:00",
    "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
@@ -744,12 +756,6 @@
    "channel": "UC2UhuvjTIrR0Ck2KrkvRcuA"
   },
   {
-   "id": "Mw4Kb1HbwqE",
-   "title": "Peppa Pig Tales 2026 🎃 Peppa’s SURPRISE Halloween Dance Party!🦇 BRAND NEW Peppa Pig Official",
-   "published": "2026-10-30T10:00:45+00:00",
-   "channel": "UCAOtE1V7Ots4DjM8JLlrYgg"
-  },
-  {
    "id": "MhFLB4MsIKI",
    "title": "*throwback* Twins Fire Truck Beds & The Bissell Little Green Machine  that Cleans EVERYTHING",
    "published": "2026-10-29T19:00:29+00:00",
@@ -766,12 +772,6 @@
    "title": "Chris & Zac's Identical Twins Room Tour ",
    "published": "2026-10-28T19:00:26+00:00",
    "channel": "UCvthuVsurPaVz2a7_4LepGg"
-  },
-  {
-   "id": "1niX6Ah61zk",
-   "title": "2 HOURS | Happy Halloween with Bluey and Bingo 🎃🦇 | Bluey",
-   "published": "2026-10-28T16:00:21+00:00",
-   "channel": "UCVzLLZkDuFGAE2BGdBuBNBg"
   },
   {
    "id": "pE4fklyZ2Rg",
@@ -1183,25 +1183,25 @@
   },
   {
    "id": "4mGVkTCx2ls",
-   "title": "I Ate The World's Most Exotic Food",
+   "title": "$1 vs $100,000 Rare Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "xReCiWbe1UQ",
-   "title": "Which YouTuber Is The Best Chef?",
+   "title": "Which YouTuber Is The Best Cook?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "GPgW3MWmQwM",
-   "title": "I Ate Rare Food In EVERY Color!",
+   "title": "I Ate Rare Food In EVERY Color",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "IzGqMpBIs8o",
-   "title": "I Challenged EVERY YouTube Chef!",
+   "title": "I Challenged EVERY YouTube Chef",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1213,7 +1213,7 @@
   },
   {
    "id": "kIB-ypmiIzo",
-   "title": "I Ate Breakfast From Every Country",
+   "title": "I Ate Breakfast From EVERY Country!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1231,7 +1231,7 @@
   },
   {
    "id": "TBL74Wsfbig",
-   "title": "$1 vs $100,000 Plane Food",
+   "title": "I Ate EVERY Level Of Plane Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1261,7 +1261,7 @@
   },
   {
    "id": "IdENz7Spr74",
-   "title": "Can I Turn MrBeast Into A Chef?",
+   "title": "I Turned MrBeast Into A Chef",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1465,7 +1465,7 @@
   },
   {
    "id": "tP_x_ctVz3Y",
-   "title": "I Cooked EVERY YouTuber Their Last Meal",
+   "title": "I Cooked EVERY YouTuber’s Last Meals",
    "published": "2026-10-03T16:00:12+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1930,5 +1930,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-25T04:18:25Z"
+ "updated": "2026-11-25T19:25:18Z"
 }
