@@ -78,6 +78,12 @@
  ],
  "videos": [
   {
+   "id": "d6yQgRfDE2U",
+   "title": "Is Jupiter NOT a Planet After All?",
+   "published": "2026-11-25T00:00:19+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
    "id": "kNJA-KrObro",
    "title": "Geologists Finally Know What Wyoming's Devils Tower Really Is",
    "published": "2026-11-24T18:00:32+00:00",
@@ -330,12 +336,6 @@
    "channel": "UCAOtE1V7Ots4DjM8JLlrYgg"
   },
   {
-   "id": "AqkiYmZ7opo",
-   "title": "Why Nobody Talks About Earth’s Largest Predator",
-   "published": "2026-11-18T13:00:09+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
    "id": "bs312D1_Avc",
    "title": "Alyssa Arrives at College! ￼",
    "published": "2026-11-17T17:00:27+00:00",
@@ -523,7 +523,7 @@
   },
   {
    "id": "9ZqdgmaO6gM",
-   "title": "$1 vs $10,000 Cooking Challenge",
+   "title": "What Can You Cook With $10,000?",
    "published": "2026-11-07T17:00:35+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1183,7 +1183,7 @@
   },
   {
    "id": "4mGVkTCx2ls",
-   "title": "$1 vs $100,000 Rare Food",
+   "title": "I Ate The World's Most Exotic Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1195,13 +1195,13 @@
   },
   {
    "id": "GPgW3MWmQwM",
-   "title": "I Ate Rare Food In EVERY Color",
+   "title": "I Ate Rare Food In EVERY Color!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "IzGqMpBIs8o",
-   "title": "I Challenged EVERY YouTube Chef",
+   "title": "I Challenged EVERY YouTube Chef!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1213,7 +1213,7 @@
   },
   {
    "id": "kIB-ypmiIzo",
-   "title": "I Ate Breakfast From EVERY Country!",
+   "title": "I Ate Breakfast From Every Country",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1231,7 +1231,7 @@
   },
   {
    "id": "TBL74Wsfbig",
-   "title": "I Ate EVERY Level Of Plane Food",
+   "title": "$1 vs $100,000 Plane Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1255,13 +1255,13 @@
   },
   {
    "id": "WP8EMyoWUlM",
-   "title": "I Cooked For A Lion!",
+   "title": "I Cooked For EVERY Animal",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "IdENz7Spr74",
-   "title": "I Turned MrBeast Into A Chef",
+   "title": "Can I Turn MrBeast Into A Chef?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1465,7 +1465,7 @@
   },
   {
    "id": "tP_x_ctVz3Y",
-   "title": "I Cooked EVERY YouTuber’s Last Meals",
+   "title": "I Cooked EVERY YouTuber Their Last Meal",
    "published": "2026-10-03T16:00:12+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1930,5 +1930,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-24T20:13:54Z"
+ "updated": "2026-11-25T04:18:25Z"
 }
