@@ -78,6 +78,18 @@
  ],
  "videos": [
   {
+   "id": "WGhq7CKjHq0",
+   "title": "The Asteroid That Killed the Dinosaurs Left Behind a Huge Mystery",
+   "published": "2026-11-26T00:00:29+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "f4uU1l9FUBI",
+   "title": "Antarctica Is Swallowing the South Pole Station",
+   "published": "2026-11-25T23:00:09+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
    "id": "gWb2HshluCw",
    "title": "1 HOUR 🎊 | Bluey Games at Nana's ☺️ 💙 | Charades + MORE 🩰 | Bluey",
    "published": "2026-11-25T16:00:06+00:00",
@@ -300,12 +312,6 @@
    "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
-   "id": "tCQgzS0JMyA",
-   "title": "The Volcano Behind History’s Deadliest Tsunamis Is Erupting Again",
-   "published": "2026-11-19T23:00:01+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
    "id": "5Rgg7kh8Mbk",
    "title": "You Can Only Have TWO Oreos",
    "published": "2026-11-19T19:00:19+00:00",
@@ -322,12 +328,6 @@
    "title": "Peppa Meets the Baby! 💗 BRAND NEW Full Movie | Baby Evie is Born 🍼 | 1 Hour of Kids Cartoons",
    "published": "2026-11-19T14:15:35+00:00",
    "channel": "UCAOtE1V7Ots4DjM8JLlrYgg"
-  },
-  {
-   "id": "Ny196TnhlZM",
-   "title": "The Forbidden Place in Arizona That Nobody Can Visit",
-   "published": "2026-11-19T14:00:39+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
    "id": "ONsACzNu9gY",
@@ -1171,19 +1171,19 @@
   },
   {
    "id": "KqTAVprbJmg",
-   "title": "$1 vs $100,000 Hotel Food",
+   "title": "I Ate $100,000 Hotel Food!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "oJhdpGp2r-8",
-   "title": "I Cooked Soccer Stars Their FAVORITE Food!",
+   "title": "I Cooked For EVERY Soccer Star",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "4mGVkTCx2ls",
-   "title": "$1 vs $100,000 Rare Food",
+   "title": "I Tried $100,000 Exotic Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1213,7 +1213,7 @@
   },
   {
    "id": "kIB-ypmiIzo",
-   "title": "I Ate Breakfast From EVERY Country!",
+   "title": "I Ate Breakfast From Every Country",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1231,7 +1231,7 @@
   },
   {
    "id": "TBL74Wsfbig",
-   "title": "I Ate EVERY Level Of Plane Food",
+   "title": "$1 vs $100,000 Plane Food",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1255,7 +1255,7 @@
   },
   {
    "id": "WP8EMyoWUlM",
-   "title": "I Cooked For EVERY Animal",
+   "title": "I Cooked For A Lion",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1465,7 +1465,7 @@
   },
   {
    "id": "tP_x_ctVz3Y",
-   "title": "I Cooked EVERY YouTuber’s Last Meals",
+   "title": "YouTubers Strangest Last Meals",
    "published": "2026-10-03T16:00:12+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1543,7 +1543,7 @@
   },
   {
    "id": "1fGScw5eX0M",
-   "title": "10 Levels Of Spicy Food",
+   "title": "I Ate EVERY Level Of Spicy Food!",
    "published": "2026-09-12T16:00:00+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1930,5 +1930,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-25T19:25:18Z"
+ "updated": "2026-11-26T03:38:21Z"
 }
