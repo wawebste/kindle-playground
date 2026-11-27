@@ -12,7 +12,7 @@ html,body{margin:0;height:100%;overflow:hidden;}
 body{font-family:"Trebuchet MS","Comic Sans MS",system-ui,sans-serif;color:var(--ink);user-select:none;-webkit-user-select:none;
   background:radial-gradient(circle at 20% 10%,#fff6fb 0,#ffe3f1 40%,#e9dcff 100%);display:flex;flex-direction:column;}
 header{display:flex;align-items:center;gap:10px;padding:8px 12px 4px;}
-h1{margin:0;font-size:26px;flex:1;color:var(--pink);text-shadow:0 2px 0 #fff;white-space:nowrap;overflow:hidden;}
+h1{margin:0;font-size:24px;flex:1;color:var(--pink);text-shadow:0 2px 0 #fff;white-space:nowrap;overflow:hidden;}
 .btn{border:none;border-radius:999px;background:#fff;box-shadow:0 3px 0 rgba(90,42,94,.2);font:inherit;font-weight:700;color:var(--ink);
   padding:8px 16px;font-size:18px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;}
 .btn:active{transform:translateY(2px);box-shadow:0 1px 0 rgba(90,42,94,.2);}
@@ -26,8 +26,21 @@ main{flex:1;display:flex;min-height:0;}
 @keyframes wig{0%,100%{transform:rotate(0)}25%{transform:rotate(-3deg)}75%{transform:rotate(3deg)}}
 .hint{position:absolute;top:6px;left:50%;transform:translateX(-50%);background:#fff;border-radius:999px;padding:6px 16px;
   font-weight:700;font-size:16px;box-shadow:0 2px 6px rgba(90,42,94,.15);white-space:nowrap;pointer-events:none;z-index:2;}
-#panel{width:min(44vw,440px);display:flex;flex-direction:column;padding:6px 10px 10px;gap:8px;min-height:0;}
-@media (orientation:portrait){main{flex-direction:column}#panel{width:auto;height:46vh}}
+#panel{width:min(36vw,360px);display:flex;flex-direction:column;padding:6px 10px 10px;gap:8px;min-height:0;}
+@media (orientation:portrait){main{flex-direction:column}#panel{width:auto;height:38vh}}
+#stage{display:flex;flex-direction:column;}
+#svgwrap{flex:1;position:relative;min-height:0;}
+.zoombar{display:flex;gap:8px;justify-content:center;padding:4px 6px 6px;}
+@media (orientation:landscape){#stage{flex-direction:row-reverse}.zoombar{flex-direction:column;padding:60px 4px 8px 10px}}
+.zb{width:58px;height:58px;border:none;border-radius:16px;padding:0;background:var(--skin,#f5c9a7);box-shadow:0 3px 0 rgba(90,42,94,.2);cursor:pointer;overflow:hidden;font-size:30px;display:flex;align-items:center;justify-content:center;}
+.zb svg{width:100%;height:100%;pointer-events:none;}
+.zb.all{background:#fff;}
+.zb.on{box-shadow:0 0 0 3px #fff,0 0 0 6px var(--pink);}
+#confirm{position:fixed;inset:0;background:rgba(60,20,70,.45);display:none;align-items:center;justify-content:center;z-index:20;}
+#confirm.show{display:flex;}
+#confirm .box{background:#fff;border-radius:28px;padding:22px 26px;text-align:center;font-size:24px;font-weight:700;box-shadow:0 10px 30px rgba(0,0,0,.25);}
+#confirm .row{display:flex;gap:16px;justify-content:center;margin-top:16px;}
+#confirm .btn{font-size:34px;width:96px;height:72px;}
 .tabs{display:flex;gap:6px;}
 .tab{flex:1 1 0;min-width:0;border:none;border-radius:16px;background:rgba(255,255,255,.55);font:inherit;font-weight:700;font-size:12px;
   padding:5px 2px;color:var(--ink);display:flex;flex-direction:column;align-items:center;cursor:pointer;}
@@ -38,9 +51,9 @@ main{flex:1;display:flex;min-height:0;}
 .grid{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;}
 .item{display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;font:inherit;font-size:12px;font-weight:700;
   color:var(--ink);padding:2px;cursor:pointer;}
-.chip{width:56px;height:56px;border-radius:50%;box-shadow:inset 0 -6px 0 rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.18);font-size:30px;
+.chip{width:52px;height:52px;border-radius:50%;box-shadow:inset 0 -6px 0 rgba(0,0,0,.12),0 2px 4px rgba(0,0,0,.18);font-size:30px;
   display:flex;align-items:center;justify-content:center;background:#f4eef7;overflow:hidden;}
-.chip.wide{width:96px;border-radius:16px;}
+.chip.wide{width:90px;border-radius:16px;}
 .chip svg{width:100%;height:100%;}
 .item.on .chip{box-shadow:0 0 0 4px #fff,0 0 0 7px var(--pink);}
 .allbtn{width:100%;margin-bottom:10px;}
@@ -57,12 +70,14 @@ main{flex:1;display:flex;min-height:0;}
   <a class="btn round" href="../" aria-label="Home">🏠</a>
   <h1>💅 Nail Salon</h1>
   <button class="btn round" id="undo" aria-label="Undo">↩️</button>
+  <button class="btn" id="restart">🧼 Start over</button>
   <button class="btn big" id="show">🎉 Show off!</button>
 </header>
 <main>
   <div id="stage">
     <div class="hint" id="hint"></div>
-    <svg id="hand" viewBox="20 50 360 470" xmlns="http://www.w3.org/2000/svg">
+    <div id="svgwrap">
+    <svg id="hand" viewBox="24 52 352 452" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="gRainbow" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stop-color="#ff3b3b"/><stop offset=".2" stop-color="#ff9a1f"/><stop offset=".4" stop-color="#ffe11f"/>
@@ -113,12 +128,16 @@ main{flex:1;display:flex;min-height:0;}
         </radialGradient>
       </defs>
       <defs id="dyn"></defs>
+      <g id="world">
       <g id="layerOutline"></g>
       <g id="layerFill"></g>
       <g id="layerBracelet"></g>
       <g id="layerRings"></g>
       <g id="layerNails"></g>
+      </g>
     </svg>
+    </div>
+    <div class="zoombar" id="zoombar"></div>
   </div>
   <div id="panel">
     <div class="tabs" id="tabs"></div>
@@ -126,6 +145,7 @@ main{flex:1;display:flex;min-height:0;}
   </div>
 </main>
 
+<div id="confirm"><div class="box">Start over? 🧼<div class="row"><button class="btn" id="yes">✅</button><button class="btn" id="no">❌</button></div></div></div>
 <script>
 (function(){
 const NS='http://www.w3.org/2000/svg';
@@ -233,7 +253,7 @@ function buildHand(){
     el('path',{d:`M ${-f.w*.14} 3 Q 0 6 ${f.w*.14} 3`,fill:'none','stroke-width':2,'stroke-linecap':'round'},cg);
     // nail
     const cp=el('clipPath',{id:'clip'+i},dyn);clipP[i]=el('path',{},cp);
-    const g=el('g',{transform:`translate(${f.t[0]} ${f.t[1]}) rotate(${f.ang})`,'data-nail':i},ln);
+    const g=el('g',{id:'nl'+i,transform:`translate(${f.t[0]} ${f.t[1]}) rotate(${f.ang})`,'data-nail':i},ln);
     nailG[i]=g;
     bedP[i]=el('path',{fill:'rgba(255,185,185,.55)'},g);
     contentG[i]=el('g',{'clip-path':`url(#clip${i})`},g);
@@ -247,6 +267,7 @@ function applySkin(){
   fingerOutlines.forEach(e=>e.setAttribute('stroke',out));
   [wristFill,palmFill].forEach(e=>e.setAttribute('fill',fill));
   fingerFills.forEach(e=>e.setAttribute('stroke',fill));
+  document.documentElement.style.setProperty('--skin',fill);
   document.querySelectorAll('.crease path').forEach(p=>{p.setAttribute('stroke',out);p.setAttribute('stroke-opacity','.6');});
 }
 function applyShape(){
@@ -426,7 +447,7 @@ svg.addEventListener('pointerup',endStroke);svg.addEventListener('pointercancel'
 
 $('undo').onclick=()=>{if(!history.length)return;state=JSON.parse(history.pop());updUndo();renderAll();sfx.tick();showTab(sel.tab);};
 $('show').onclick=()=>{
-  sfx.party();svg.classList.remove('wiggle');void svg.getBoundingClientRect();svg.classList.add('wiggle');
+  setView(-1,false);sfx.party();svg.classList.remove('wiggle');void svg.getBoundingClientRect();svg.classList.add('wiggle');
   const em=['💅','✨','💖','⭐','🌈','💎','🎀','🌸','🦄','💍'];
   for(let k=0;k<36;k++){
     const s=document.createElement('div');s.className='conf';s.textContent=em[k%em.length];
@@ -507,13 +528,72 @@ function showTab(t){
     SHAPES.forEach(([k,l])=>g2.appendChild(item('shape',{label:l,on:state.shape===k,html:miniSVG('-30 -40 60 70',s=>{el('line',{x1:0,y1:-6,x2:0,y2:60,stroke:SKINS[state.skin][0],'stroke-width':40,'stroke-linecap':'round'},s);el('path',{d:nailPath(dimsW(40),k),transform:'translate(0 -6)',fill:'#ff4f9a',stroke:'rgba(0,0,0,.2)'},s);})},()=>{
       snap();state.shape=k;applyShape();for(let i=0;i<5;i++)renderNail(i);save();
     })));
-    allButton(tray,'🧼 Start over',()=>{snap();const keep={skin:state.skin,shape:state.shape};state=Object.assign(blankState(),keep);renderAll();sfx.paint();});
   }
 }
 const tabs=$('tabs');
 TABS.forEach(([k,ic,l])=>{const b=document.createElement('button');b.className='tab';b.dataset.tab=k;b.innerHTML=`<span>${ic}</span>${l}`;b.onclick=()=>{sfx.tick();showTab(k);};tabs.appendChild(b);});
 
-buildHand();renderAll();updUndo();showTab('polish');
+/* ---------- zoom ---------- */
+const FULL={x:24,y:52,w:352,h:452,a:0,px:200,py:300};
+let view=Object.assign({},FULL),zoom=-1,zanim=0;
+function targetView(i){
+  if(i<0)return Object.assign({},FULL);
+  const f=FINGERS[i],d=dims(i),r=svg.getBoundingClientRect(),asp=(r.width||1)/(r.height||1);
+  let h=d.L*2.3,w=h*asp;
+  if(w<d.nw*3.2){w=d.nw*3.2;h=w/asp;}
+  const cy=f.t[1]+(d.yT+d.yB)/2-3;
+  return {x:f.t[0]-w/2,y:cy-h/2,w,h,a:-f.ang,px:f.t[0],py:f.t[1]};
+}
+function applyView(v){
+  svg.setAttribute('viewBox',`${v.x} ${v.y} ${v.w} ${v.h}`);
+  $('world').setAttribute('transform',`rotate(${v.a} ${v.px} ${v.py})`);
+}
+function setView(i,animate){
+  zoom=i;
+  document.querySelectorAll('.zb').forEach(b=>b.classList.toggle('on',+b.dataset.z===i));
+  const from=Object.assign({},view),to=targetView(i);
+  if(animate===false){view=to;applyView(view);return;}
+  const t0=performance.now(),dur=380,id=++zanim;
+  // keep the pivot steady when one end is the full view
+  if(from.a===0){from.px=to.px;from.py=to.py;}
+  if(to.a===0){to.px=from.px;to.py=from.py;}
+  (function step(t){
+    if(id!==zanim)return;
+    const k=Math.max(0,Math.min(1,(t-t0)/dur)),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+    const v={};for(const key in to)v[key]=from[key]+(to[key]-from[key])*e;
+    view=v;applyView(v);
+    if(k<1)requestAnimationFrame(step);
+  })(t0);
+}
+function buildZoombar(){
+  const zb=$('zoombar');zb.innerHTML='';
+  const all=document.createElement('button');all.className='zb all on';all.dataset.z=-1;all.textContent='✋';all.setAttribute('aria-label','Whole hand');
+  all.onclick=()=>{sfx.tick();setView(-1);};zb.appendChild(all);
+  [0,1,2,3,4].forEach(i=>{
+    const f=FINGERS[i],b=document.createElement('button');b.className='zb';b.dataset.z=i;b.setAttribute('aria-label','Zoom nail '+(i+1));
+    b.innerHTML=`<svg viewBox="${f.t[0]-34} ${f.t[1]-40} 68 68"><use href="#nl${i}"/></svg>`;
+    b.onclick=()=>{sfx.pop();setView(zoom===i?-1:i);};zb.appendChild(b);
+  });
+}
+window.addEventListener('resize',()=>{zanim++;view=targetView(zoom);applyView(view);});
+// swipe left/right while zoomed to move to the next nail
+let sw=null;
+svg.addEventListener('pointerdown',e=>{sw=(zoom>=0&&sel.tab!=='draw')?{x:e.clientX,y:e.clientY}:null;},true);
+svg.addEventListener('pointerup',e=>{
+  if(!sw)return;const dx=e.clientX-sw.x,dy=e.clientY-sw.y;sw=null;
+  if(Math.abs(dx)>80&&Math.abs(dx)>Math.abs(dy)*1.5){const n=zoom+(dx<0?1:-1);if(n>=0&&n<5){sfx.tick();setView(n);}}
+},true);
+
+/* ---------- start over ---------- */
+$('restart').onclick=()=>{sfx.tick();$('confirm').classList.add('show');};
+$('no').onclick=()=>{sfx.tick();$('confirm').classList.remove('show');};
+$('yes').onclick=()=>{
+  $('confirm').classList.remove('show');snap();
+  const keep={skin:state.skin,shape:state.shape};state=Object.assign(blankState(),keep);
+  renderAll();setView(-1);sfx.paint();if(sel.tab==='bling')showTab('bling');
+};
+
+buildHand();renderAll();updUndo();buildZoombar();showTab('polish');
 })();
 </script>
 </body>
