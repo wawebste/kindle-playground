@@ -78,6 +78,18 @@
  ],
  "videos": [
   {
+   "id": "3WP8ceZYAyU",
+   "title": "The Oldest Shipwreck Ever Found – It Belongs to an Unknown Civilization",
+   "published": "2026-11-27T00:00:00+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
+   "id": "6qS2IhpO_jI",
+   "title": "Astronomers Just Detected Radio Signal from Beta Pictoris b",
+   "published": "2026-11-26T23:00:17+00:00",
+   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
+  },
+  {
    "id": "JvHRteiufRk",
    "title": "Geroge Hunts for the Shadow Monster 🐵 Curious George 🐵 Kids Cartoon 🐵 Kids Movies",
    "published": "2026-11-26T15:00:34+00:00",
@@ -294,22 +306,10 @@
    "channel": "UCUHwBudrD5mZ8dgRnf0Jt8A"
   },
   {
-   "id": "M6BAw0Qfy8g",
-   "title": "The Congo River Is Too Dangerous to Explore, Here's Why",
-   "published": "2026-11-20T23:00:17+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
-  },
-  {
    "id": "92yaYo5UzEo",
    "title": "40+ Bags, 8 Kids, HOW DID WE DO IT?!!",
    "published": "2026-11-20T19:00:12+00:00",
    "channel": "UCvthuVsurPaVz2a7_4LepGg"
-  },
-  {
-   "id": "5s-MVmiHEbs",
-   "title": "Winter 2027 Could Be a Disaster",
-   "published": "2026-11-20T16:00:33+00:00",
-   "channel": "UC4rlAVgAK0SGk-yTfe48Qpw"
   },
   {
    "id": "ToJjpXhFfSQ",
@@ -1177,7 +1177,7 @@
   },
   {
    "id": "oJhdpGp2r-8",
-   "title": "I Cooked For EVERY Football Star",
+   "title": "I Cooked For EVERY Soccer Star",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1189,19 +1189,19 @@
   },
   {
    "id": "xReCiWbe1UQ",
-   "title": "Which YouTuber Is The Best Cook?",
+   "title": "Which YouTuber Is The Best Chef?",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "GPgW3MWmQwM",
-   "title": "I Ate Rare Food In EVERY Color",
+   "title": "I Ate Rare Food In EVERY Color!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "IzGqMpBIs8o",
-   "title": "I Challenged EVERY YouTube Chef",
+   "title": "I Cooked Against YouTube's Best Chefs",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1213,7 +1213,7 @@
   },
   {
    "id": "kIB-ypmiIzo",
-   "title": "I Ate Breakfast From Every Country",
+   "title": "I Ate Breakfast From EVERY Country!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1255,13 +1255,13 @@
   },
   {
    "id": "WP8EMyoWUlM",
-   "title": "I Cooked For A Lion",
+   "title": "I Cooked For A Lion!",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
   {
    "id": "IdENz7Spr74",
-   "title": "I Turned MrBeast Into A Chef!",
+   "title": "I Turned MrBeast Into A Chef",
    "published": "2026-10-18T15:45:49+00:00",
    "channel": "UCMyOj6fhvKFMjxUCp3b_3gA"
   },
@@ -1930,5 +1930,5 @@
    "upnext": true
   }
  ],
- "updated": "2026-11-26T19:07:55Z"
+ "updated": "2026-11-27T03:40:00Z"
 }
